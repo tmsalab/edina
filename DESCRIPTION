@@ -1,5 +1,5 @@
 Package: edina
-Title: Exploratory Deterministic Input, Noisy "And" Gate Modeling
+Title: Bayesian Estimation of an Exploratory Deterministic Input, Noisy "And" Gate Model
 Version: 0.0.0.9000
 Authors@R: c(
     person("James Joseph", "Balamuta", 
