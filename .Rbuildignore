@@ -1,0 +1,10 @@
+^LICENSE\.md$
+^codecov\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^README-.*\.png$
+^\.travis\.yml$
+^cran-comments\.md$
+^src/\.clang-format$
+^LICENSE\.md$
