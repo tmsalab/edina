@@ -1,8 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Build
-Status](https://travis-ci.org/tmsalab/edina.svg)](https://travis-ci.org/tmsalab/edina)
+<!-- badges: start -->
+
+[![R build
+status](https://github.com/tmsalab/edina/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/edina/actions)
 [![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](http://www.r-pkg.org/badges/version/edina)](https://cran.r-project.org/package=edina)
@@ -14,6 +16,7 @@ Downloads](http://cranlogs.r-pkg.org/badges/edina?color=brightgreen)](http://www
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/edina?color=brightgreen)](http://www.r-pkg.org/pkg/edina)
 [![Coverage
 status](https://codecov.io/gh/tmsalab/edina/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/edina?branch=master)
+<!-- badges: end -->
 
 # `edina` R package
 
