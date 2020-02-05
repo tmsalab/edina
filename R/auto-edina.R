@@ -39,7 +39,7 @@ auto_edina = function(data, k = 2:4,
     num_k = length(k)
     num_j = ncol(data)
 
-    message("The estimated runtime for searching this space is: ", format(convert_seconds_to_time(sum(2^(k+4)))))
+    message("Starting the estimation procedure ... ")
 
     if(save_results) {
         # Get the length of the string e.g. 200 => 3
@@ -156,6 +156,8 @@ autoplot.auto_edina = function(object,
 #' @param x   An `auto_edina` or `auto_errum` object.
 #' @param ... Not used
 #' @export
+#'
+#' @importFrom stats reshape
 model_selection_graph = function(x, ...){
     UseMethod("model_selection_graph", x)
 }
