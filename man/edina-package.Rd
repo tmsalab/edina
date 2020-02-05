@@ -2,14 +2,22 @@
 % Please edit documentation in R/edina-package.R
 \docType{package}
 \name{edina-package}
-\alias{edina}
 \alias{edina-package}
+\alias{_PACKAGE}
 \title{edina: Bayesian Estimation of an Exploratory Deterministic Input, Noisy "And" Gate Model}
 \description{
 Perform a bayesian estimation of the Exploratory 
     Deterministic Input, Noisy "And" Gate (EDINA)
     cognitive diagnostic model described by Chen et al. (2018)
     <doi:10.1007/s11336-017-9579-4>.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/tmsalab/edina}
+  \item Report bugs at \url{https://github.com/tmsalab/edina/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
