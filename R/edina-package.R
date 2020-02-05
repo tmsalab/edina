@@ -1,3 +1,5 @@
+#' @name edina-package
+#' @aliases edina-package
 #' @keywords internal
 "_PACKAGE"
 
