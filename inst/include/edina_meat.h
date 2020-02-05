@@ -111,7 +111,7 @@ inline arma::mat random_Q(unsigned int J, unsigned int K)
 }
 
 
-inline bool check_identifiability(const arma::mat Q)
+inline bool check_identifiability(const arma::mat& Q)
 {
     unsigned int K = Q.n_cols;
     unsigned int J = Q.n_rows;

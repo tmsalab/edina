@@ -8,3 +8,8 @@ Rcpp::List edina_Gibbs_Q(const arma::mat &Y, unsigned int K,
     // Release
     return edina::edina_Gibbs_Q(Y, K, burnin, chain_length);
 }
+
+// [[Rcpp::export]]
+bool check_identifibility(const arma::mat& Q) {
+    return edina::check_identifiability(Q);
+}
