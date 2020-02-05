@@ -7,8 +7,8 @@ citEntry(entry = "Manual",
                                    as.person("Steven Andrew Culpepper"),
                                    as.person("Jeffrey A. Douglas")
                                   ),
-         year         = 2019,
-         textVersion  = paste("Balamuta, J. J., Culpepper, S. A., and Douglas, J. A. (2019).",
+         year         = 2020,
+         textVersion  = paste("Balamuta, J. J., Culpepper, S. A., and Douglas, J. A. (2020).",
                               "edina: Bayesian Estimation of an Exploratory Deterministic Input, Noisy \"And\" Gate Model.",
                               "URL https://cran.r-project.org/package=edina.")
 )
