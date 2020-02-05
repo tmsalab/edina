@@ -10,6 +10,6 @@ Rcpp::List edina_Gibbs_Q(const arma::mat &Y, unsigned int K,
 }
 
 // [[Rcpp::export]]
-bool check_identifibility(const arma::mat& Q) {
+bool check_identifiability(const arma::mat& Q) {
     return edina::check_identifiability(Q);
 }

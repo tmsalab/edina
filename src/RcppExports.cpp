@@ -21,21 +21,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// check_identifibility
-bool check_identifibility(const arma::mat& Q);
-RcppExport SEXP _edina_check_identifibility(SEXP QSEXP) {
+// check_identifiability
+bool check_identifiability(const arma::mat& Q);
+RcppExport SEXP _edina_check_identifiability(SEXP QSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const arma::mat& >::type Q(QSEXP);
-    rcpp_result_gen = Rcpp::wrap(check_identifibility(Q));
+    rcpp_result_gen = Rcpp::wrap(check_identifiability(Q));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_edina_edina_Gibbs_Q", (DL_FUNC) &_edina_edina_Gibbs_Q, 4},
-    {"_edina_check_identifibility", (DL_FUNC) &_edina_check_identifibility, 1},
+    {"_edina_check_identifiability", (DL_FUNC) &_edina_check_identifiability, 1},
     {NULL, NULL, 0}
 };
 

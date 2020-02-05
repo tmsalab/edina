@@ -5,7 +5,7 @@ edina_Gibbs_Q <- function(Y, K, burnin = 1000L, chain_length = 10000L) {
     .Call(`_edina_edina_Gibbs_Q`, Y, K, burnin, chain_length)
 }
 
-check_identifibility <- function(Q) {
-    .Call(`_edina_check_identifibility`, Q)
+check_identifiability <- function(Q) {
+    .Call(`_edina_check_identifiability`, Q)
 }
 
