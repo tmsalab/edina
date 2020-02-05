@@ -57,8 +57,7 @@ auto_edina = function(data, k = 2:4,
 
     for(i in seq_along(k)) {
         k_idx = k[i]
-        message("Working on k = ", k_idx)
-        message("Estimated runtime is: ", format(convert_seconds_to_time(2^(k_idx+4))))
+        message("Working on k = ", k_idx, " ... ")
 
         modeled_value = edina(data,
                               k = k_idx,
