@@ -14,8 +14,6 @@ Status](https://cranchecks.info/badges/worst/edina)](https://cran.r-project.org/
 Downloads](http://cranlogs.r-pkg.org/badges/edina?color=brightgreen)](http://www.r-pkg.org/pkg/edina)
 [![RStudio CRAN Mirror’s Total
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/edina?color=brightgreen)](http://www.r-pkg.org/pkg/edina)
-[![Coverage
-status](https://codecov.io/gh/tmsalab/edina/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/edina?branch=master)
 <!-- badges: end -->
 
 # `edina` R package
