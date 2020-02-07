@@ -9,3 +9,4 @@
 ^src/\.clang-format$
 ^LICENSE\.md$
 ^\.github$
+^CRAN-RELEASE$
