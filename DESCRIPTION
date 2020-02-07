@@ -1,6 +1,6 @@
 Package: edina
 Title: Bayesian Estimation of an Exploratory Deterministic Input, Noisy "And" Gate Model
-Version: 0.0.1.9000
+Version: 0.1.0
 Authors@R: c(
     person("James Joseph", "Balamuta", 
            email = "balamut2@illinois.edu", 
@@ -28,9 +28,6 @@ Imports:
     ggplot2, 
     jjb,
     reshape2
-Suggests: 
-    covr,
-    testthat
 LinkingTo: 
     Rcpp,
     RcppArmadillo,

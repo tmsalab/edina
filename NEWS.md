@@ -1,11 +1,7 @@
-# edina 0.0.0.9000
+# edina 0.1.0
 
 ## Features
 
 - Provides a high-performing modeling routine for the Exploratory 
   Deterministic Input, Noisy "And" Gate model.
-
-## Deployment
-
-- Added unit tests
-- Added code coverage check
+- Estimate Q matrices with varying _k_ values and compare.
