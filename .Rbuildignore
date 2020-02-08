@@ -8,4 +8,5 @@
 ^cran-comments\.md$
 ^src/\.clang-format$
 ^LICENSE\.md$
-^\.github/workflows/R-CMD-check\.yaml$
+^\.github$
+^CRAN-RELEASE$
