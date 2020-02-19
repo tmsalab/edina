@@ -1,22 +1,18 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# edina
+
 <!-- badges: start -->
 
 [![R build
 status](https://github.com/tmsalab/edina/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/edina/actions)
 [![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![CRAN Version
-Badge](http://www.r-pkg.org/badges/version/edina)](https://cran.r-project.org/package=edina)
-[![CRAN
-Status](https://cranchecks.info/badges/worst/edina)](https://cran.r-project.org/web/checks/check_results_edina.html)
 [![RStudio CRAN Mirror’s Monthly
-Downloads](http://cranlogs.r-pkg.org/badges/edina?color=brightgreen)](http://www.r-pkg.org/pkg/edina)
+Downloads](http://cranlogs.r-pkg.org/badges/edina?color=brightgreen)](https://cran.r-project.org/package=edina)
 [![RStudio CRAN Mirror’s Total
-Downloads](http://cranlogs.r-pkg.org/badges/grand-total/edina?color=brightgreen)](http://www.r-pkg.org/pkg/edina)
+Downloads](http://cranlogs.r-pkg.org/badges/grand-total/edina?color=brightgreen)](https://cran.r-project.org/package=edina)
 <!-- badges: end -->
-
-# `edina` R package
 
 Perform a bayesian estimation of the Exploratory Deterministic Input,
 Noisy “And” Gate (EDINA) cognitive diagnostic model described by Chen et
