@@ -89,6 +89,12 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #' - `chain_length`: Amount of iterations to retain.
 #' - `timing`: Duration of the run
 #' - `dataset_name`: Name of the data set used in estimation.
+#'
+#' @seealso
+#' [auto_edina()],
+#' [summary.edina()],
+#' [print.edina()]
+#'
 #' @export
 #' @importFrom jjb is_whole
 #' @examples
@@ -121,6 +127,12 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #'
 #' # Compute the edina model
 #' edina_model = edina(items_dina, k = K)
+#'
+#' # Display results
+#' edina_model
+#'
+#' # Provide a summary overview
+#' summary(edina_model)
 #'
 #' }
 #'
