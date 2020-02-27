@@ -62,73 +62,23 @@ new_edina_summary = function(edina, model_fit, alpha) {
 }
 
 
-#' Model Heuristic used for Model Selection
+#' EDINA Estimation Routine
 #'
-#' Computes the model heuristic for model selection.
-#' @inheritParams summary.edina
-#' @return A `double` that is the mean.
-#' @export
-model_heuristic = function(object, alpha = 0.05) {
-    or_tested = object$or_tested
-
-    mean(or_tested[upper.tri(or_tested)] < alpha |
-             or_tested[upper.tri(or_tested)] > (1-alpha))
-}
-
-#' Compute the Deviance Information Criterion (DIC)
+#' Performs the Exploratory Deterministic Input, Noise and Gate Model (EDINA)
+#' estimation on a given data set with a pre-specified `k` value.
 #'
-#' Calculate DIC for EDINA models.
-#'
-#' @param object An `edina` object
-#' @param ... Not used.
-#' @rdname DIC
-#' @export
-DIC = function(object, ...) {
-    UseMethod("DIC")
-}
-
-#' @rdname DIC
-#' @export
-DIC.edina = function(object, ...) {
-
-    # LogLikelihood at the Mean of the Posterior Distributioon
-    L = object$loglike_pmean
-
-    # Number of parameters in the model
-    P = 2 * (L - (1 / object$chain_length * object$loglike_summed))
-
-    -2 * (L - P)
-}
-
-
-## 2 * K - I_K fixed allothers to 1's. Then estimate R* matrix and the J pi*
-
-#' Calculate BIC for EDINA models.
-#' @param object An `edina` object
-#' @param ... Not used.
-#' @export
-#' @importFrom stats BIC
-BIC.edina = function(object, ...) {
-    # K number of attributes and J number of items (count only one slipping/guessing)?
-    # -2 * LogLike + ln(n) * (k + j)
-    -2*object$loglike_pmean + log(object$n)*((object$k+2)*object$j + 2^object$k)
-}
-
-#' EDINA estimation routine
-#'
-#' Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
-#'
-#' @param data         Binary responses to assessements in `matrix`
+#' @param data         Binary responses to assessments in `matrix`
 #'                     form with dimensions \eqn{N \times J}{N x J}.
 #' @param k            Number of Attribute Levels as a positive `integer`.
 #' @param burnin       Number of Observations to discard on the chain.
 #' @param chain_length Length of the MCMC chain
 #'
-#' @return An `edina` object that contains:
+#' @return
+#' An `edina` object that contains:
 #'
 #' - `coefficients`: Estimated coefficients of the model fit
 #' - `loglike_summed`: Summed log-likelihood
-#' - `loglike_pmean`: Meaned version of log-likelihood
+#' - `loglike_pmean`: Mean of log-likelihood
 #' - `pi_classes`: Latent classes
 #' - `avg_q`: Estimated Averaged Q Matrix
 #' - `est_q`: Estimated Dichotomous Q Matrix
@@ -141,19 +91,52 @@ BIC.edina = function(object, ...) {
 #' - `chain_length`: Amount of iterations to retain.
 #' - `timing`: Duration of the run
 #' - `dataset_name`: Name of the data set used in estimation.
+#'
+#' @seealso
+#' [auto_edina()],
+#' [summary.edina()],
+#' [print.edina()]
+#'
 #' @export
 #' @importFrom jjb is_whole
 #' @examples
-#' \dontrun{
-#' library("tmsadata")
+#' if(requireNamespace("simcdm", quietly = TRUE)) {
 #'
-#' # Load data
-#' data("trial_matrix", package="tmsadata")
+#' # Set a seed for reproducibility
+#' set.seed(1512)
 #'
-#' # Coerce to matrix
-#' trial_matrix = as.matrix(trial_matrix)
+#' # Setup data simulation parameters
+#' N = 15   # Number of Examinees / Subjects
+#' J = 10   # Number of Items
+#' K = 2    # Number of Skills / Attributes
 #'
-#' edina_model = edina(trial_matrix, k = 2)
+#' # Note:
+#' # Sample size and attributes have been reduced to create a minimally
+#' # viable example that can be run during CRAN's automatic check.
+#' # Please make sure to have a larger sample size...
+#'
+#' # Assign slipping and guessing values for each item
+#' ss = gs = rep(.2, J)
+#'
+#' # Simulate an identifiable Q matrix
+#' Q = simcdm::sim_q_matrix(J, K)
+#'
+#' # Simulate subject attributes
+#' subject_alphas = simcdm::sim_subject_attributes(N, K)
+#'
+#' # Simulate items under the DINA model
+#' items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
+#'
+#' \donttest{
+#' # Compute the edina model
+#' edina_model = edina(items_dina, k = K)
+#'
+#' # Display results
+#' edina_model
+#'
+#' # Provide a summary overview
+#' summary(edina_model)
+#' }
 #' }
 #'
 edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
@@ -194,23 +177,23 @@ edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
 #' Custom print method for computing the EDINA.
 #'
 #' @param x        An `edina` object
-#' @param binary_q Boolean to indicate whether the _Q_ matrix is shown in
+#' @param binary   Boolean to indicate whether the _Q_ matrix is shown in
 #'                 dichotomous form or in an estimated form.
 #' @param ...      Additional methods passed onto the `print.matrix` method.
 #'
 #' @export
-print.edina = function(x, binary_q = FALSE, ...){
+print.edina = function(x, binary = FALSE, ...){
     cat("The EDINA model for", x$dataset_name, "with K =", x$k, "\n\n")
 
-    est_mat = cbind(extract_q_matrix(x, binary_q = binary_q), x$coefficients)
+    est_mat = cbind(extract_q_matrix(x, binary = binary), x$coefficients)
 
     print(est_mat, digits = 4, ...)
     invisible(est_mat)
 }
 
-#' Summarizing the EDINA Object
+#' Summarize the EDINA Object
 #'
-#' Determine whether the `edina` object is summarized appropriately.
+#' Provide a more detailed view inside of `edina` model object.
 #'
 #' @param object An `edina` object
 #' @param alpha  Defining region to indicate the level of extremeness
@@ -221,7 +204,7 @@ print.edina = function(x, binary_q = FALSE, ...){
 summary.edina = function(object, alpha = 0.05, ...) {
 
     model_fit = matrix(c(object$k, BIC(object), DIC(object),
-                         model_heuristic(object, alpha)), ncol = 4)
+                         PPP(object, alpha)), ncol = 4)
 
     colnames(model_fit) = c("k", "bic", "dic", "heuristic")
 
@@ -238,12 +221,12 @@ summary.edina = function(object, alpha = 0.05, ...) {
 #' Custom print method for displaying the EDINA model summary information.
 #'
 #' @param x        A `summary_edina` object
-#' @param binary_q Boolean to indicate whether the _Q_ matrix is shown in
+#' @param binary   Boolean to indicate whether the _Q_ matrix is shown in
 #'                 dichotomous form or in an estimated form.
 #' @param ...      Past onto the `print.data.frame` method.
 #'
 #' @export
-print.summary_edina = function(x, binary_q = FALSE,  ...) {
+print.summary_edina = function(x, binary = FALSE,  ...) {
     # Rely upon the specification of the `edina` object in the summary class.
     # NextMethod()
 
@@ -256,7 +239,7 @@ print.summary_edina = function(x, binary_q = FALSE,  ...) {
     print(x$coefficients, digits = 4)
 
     cat("\nThe estimated Q matrix is:\n")
-    print(extract_q_matrix(x, binary_q = binary_q), digits = 4)
+    print(extract_q_matrix(x, binary = binary), digits = 4)
 
     invisible(x)
 }

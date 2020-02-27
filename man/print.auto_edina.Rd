@@ -2,7 +2,7 @@
 % Please edit documentation in R/auto-edina.R
 \name{print.auto_edina}
 \alias{print.auto_edina}
-\title{Print method for \code{auto_dina}}
+\title{Print method for \code{auto_edina}}
 \usage{
 \method{print}{auto_edina}(x, ...)
 }

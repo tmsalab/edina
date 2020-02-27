@@ -15,8 +15,8 @@ Authors@R: c(
            email = "jeffdoug@illinois.edu", 
            role = c("aut"))
     )
-Description: Perform a Bayesian estimation of the Exploratory 
-    Deterministic Input, Noisy "And" Gate ('EDINA')
+Description: Perform a Bayesian estimation of the exploratory 
+    deterministic input, noisy "and" gate ('EDINA')
     cognitive diagnostic model described by Chen et al. (2018)
     <doi:10.1007/s11336-017-9579-4>.
 URL: https://github.com/tmsalab/edina
@@ -32,7 +32,9 @@ LinkingTo:
     Rcpp,
     RcppArmadillo,
     rgen
+Suggests: simcdm
 LazyData: true
 RoxygenNote: 7.0.2
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
+Language: en-US

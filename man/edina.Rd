@@ -2,12 +2,12 @@
 % Please edit documentation in R/edina.R
 \name{edina}
 \alias{edina}
-\title{EDINA estimation routine}
+\title{EDINA Estimation Routine}
 \usage{
 edina(data, k = 3, burnin = 10000, chain_length = 20000)
 }
 \arguments{
-\item{data}{Binary responses to assessements in \code{matrix}
+\item{data}{Binary responses to assessments in \code{matrix}
 form with dimensions \eqn{N \times J}{N x J}.}
 
 \item{k}{Number of Attribute Levels as a positive \code{integer}.}
@@ -21,7 +21,7 @@ An \code{edina} object that contains:
 \itemize{
 \item \code{coefficients}: Estimated coefficients of the model fit
 \item \code{loglike_summed}: Summed log-likelihood
-\item \code{loglike_pmean}: Meaned version of log-likelihood
+\item \code{loglike_pmean}: Mean of log-likelihood
 \item \code{pi_classes}: Latent classes
 \item \code{avg_q}: Estimated Averaged Q Matrix
 \item \code{est_q}: Estimated Dichotomous Q Matrix
@@ -37,19 +37,52 @@ An \code{edina} object that contains:
 }
 }
 \description{
-Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
+Performs the Exploratory Deterministic Input, Noise and Gate Model (EDINA)
+estimation on a given data set with a pre-specified \code{k} value.
 }
 \examples{
-\dontrun{
-library("tmsadata")
+if(requireNamespace("simcdm", quietly = TRUE)) {
 
-# Load data
-data("trial_matrix", package="tmsadata")
+# Set a seed for reproducibility
+set.seed(1512)
 
-# Coerce to matrix
-trial_matrix = as.matrix(trial_matrix)
+# Setup data simulation parameters
+N = 15   # Number of Examinees / Subjects
+J = 10   # Number of Items
+K = 2    # Number of Skills / Attributes
 
-edina_model = edina(trial_matrix, k = 2)
+# Note:
+# Sample size and attributes have been reduced to create a minimally
+# viable example that can be run during CRAN's automatic check.
+# Please make sure to have a larger sample size...
+
+# Assign slipping and guessing values for each item
+ss = gs = rep(.2, J)
+
+# Simulate an identifiable Q matrix
+Q = simcdm::sim_q_matrix(J, K)
+
+# Simulate subject attributes
+subject_alphas = simcdm::sim_subject_attributes(N, K)
+
+# Simulate items under the DINA model
+items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
+
+\donttest{
+# Compute the edina model
+edina_model = edina(items_dina, k = K)
+
+# Display results
+edina_model
+
+# Provide a summary overview
+summary(edina_model)
+}
 }
 
+}
+\seealso{
+\code{\link[=auto_edina]{auto_edina()}},
+\code{\link[=summary.edina]{summary.edina()}},
+\code{\link[=print.edina]{print.edina()}}
 }

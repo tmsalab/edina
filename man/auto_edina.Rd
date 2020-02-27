@@ -4,17 +4,10 @@
 \alias{auto_edina}
 \title{Auto EDINA model selection routine}
 \usage{
-auto_edina(
-  data,
-  k = 2:4,
-  burnin = 10000,
-  chain_length = 20000,
-  save_results = FALSE,
-  save_filename = "edina_model_data"
-)
+auto_edina(data, k = 2:4, burnin = 10000, chain_length = 20000)
 }
 \arguments{
-\item{data}{Binary responses to assessements in \code{matrix}
+\item{data}{Binary responses to assessments in \code{matrix}
 form with dimensions \eqn{N \times J}{N x J}.}
 
 \item{k}{Number of Attribute Levels as a positive \code{integer}.}
@@ -22,30 +15,62 @@ form with dimensions \eqn{N \times J}{N x J}.}
 \item{burnin}{Number of Observations to discard on the chain.}
 
 \item{chain_length}{Length of the MCMC chain}
-
-\item{save_results}{Output intermediary estimations to R binary.
-Default: \code{FALSE}}
-
-\item{save_filename}{Name stem to save each \code{k} iteration to. Relevant if
-\code{save_results} is enabled.}
 }
 \value{
-An \code{auto_edina} object
+An \code{auto_edina} object.
 }
 \description{
 Automatically select an appropriate $K$ dimension for a $Q$ matrix
-under the Exploratory Determinatistic Input, Noise And gate (EDINA) Model.
+under the Exploratory Deterministic Input, Noise And gate (EDINA) Model.
 }
 \examples{
-\dontrun{
-library("tmsadata")
+if(requireNamespace("simcdm", quietly = TRUE)) {
 
-# Load data
-data("trial_matrix", package="tmsadata")
+# Set a seed for reproducibility
+set.seed(1512)
 
-# Coerce to matrix
-trial_matrix = as.matrix(trial_matrix)
+# Setup data simulation parameters
+N = 15   # Number of Examinees / Subjects
+J = 10   # Number of Items
+K = 2    # Number of Skills / Attributes
 
-edina_models = auto_edina(trial_matrix, k = 1:2)
+# Note:
+# Sample size and attributes have been reduced to create a minimally
+# viable example that can be run during CRAN's automatic check.
+# Please make sure to have a larger sample size...
+
+# Assign slipping and guessing values for each item
+ss = gs = rep(.2, J)
+
+# Simulate an identifiable Q matrix
+Q = simcdm::sim_q_matrix(J, K)
+
+# Simulate subject attributes
+subject_alphas = simcdm::sim_subject_attributes(N, K)
+
+# Simulate items under the DINA model
+items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
+
+\donttest{
+# Requires at least 15 seconds of execution time.
+# Three EDINA models will be fit with increasing number of attributes.
+model_set_edina = auto_edina(items_dina, k = 2:4)
+
+# Display results
+model_set_edina
+
+# Retrieve criterion table
+table = summary(model_set_edina)
+
+# Extract "best model"
+best_model(model_set_edina)
 }
+}
+
+}
+\seealso{
+\code{\link[=autoplot.auto_edina]{autoplot.auto_edina()}},
+\code{\link[=best_model]{best_model()}},
+\code{\link[=model_selection_graph]{model_selection_graph()}},
+\code{\link[=parameter_evolution_graph]{parameter_evolution_graph()}}
 }

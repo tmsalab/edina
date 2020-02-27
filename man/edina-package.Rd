@@ -6,8 +6,8 @@
 \alias{_PACKAGE}
 \title{edina: Bayesian Estimation of an Exploratory Deterministic Input, Noisy "And" Gate Model}
 \description{
-Perform a Bayesian estimation of the Exploratory 
-    Deterministic Input, Noisy "And" Gate ('EDINA')
+Perform a Bayesian estimation of the exploratory 
+    deterministic input, noisy "and" gate ('EDINA')
     cognitive diagnostic model described by Chen et al. (2018)
     <doi:10.1007/s11336-017-9579-4>.
 }
