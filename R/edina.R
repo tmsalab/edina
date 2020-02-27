@@ -214,7 +214,7 @@ edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
 #' Custom print method for computing the EDINA.
 #'
 #' @param x        An `edina` object
-#' @param binary_q Boolean to indicate whether the _Q_ matrix is shown in
+#' @param binary   Boolean to indicate whether the _Q_ matrix is shown in
 #'                 dichotomous form or in an estimated form.
 #' @param ...      Additional methods passed onto the `print.matrix` method.
 #'
@@ -222,7 +222,7 @@ edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
 print.edina = function(x, binary_q = FALSE, ...){
     cat("The EDINA model for", x$dataset_name, "with K =", x$k, "\n\n")
 
-    est_mat = cbind(extract_q_matrix(x, binary_q = binary_q), x$coefficients)
+    est_mat = cbind(extract_q_matrix(x, binary = binary), x$coefficients)
 
     print(est_mat, digits = 4, ...)
     invisible(est_mat)
@@ -258,12 +258,12 @@ summary.edina = function(object, alpha = 0.05, ...) {
 #' Custom print method for displaying the EDINA model summary information.
 #'
 #' @param x        A `summary_edina` object
-#' @param binary_q Boolean to indicate whether the _Q_ matrix is shown in
+#' @param binary   Boolean to indicate whether the _Q_ matrix is shown in
 #'                 dichotomous form or in an estimated form.
 #' @param ...      Past onto the `print.data.frame` method.
 #'
 #' @export
-print.summary_edina = function(x, binary_q = FALSE,  ...) {
+print.summary_edina = function(x, binary = FALSE,  ...) {
     # Rely upon the specification of the `edina` object in the summary class.
     # NextMethod()
 
@@ -276,7 +276,7 @@ print.summary_edina = function(x, binary_q = FALSE,  ...) {
     print(x$coefficients, digits = 4)
 
     cat("\nThe estimated Q matrix is:\n")
-    print(extract_q_matrix(x, binary_q = binary_q), digits = 4)
+    print(extract_q_matrix(x, binary = binary), digits = 4)
 
     invisible(x)
 }
