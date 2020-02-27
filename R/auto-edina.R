@@ -126,6 +126,6 @@ print.auto_edina = function(x, ...) {
 #' @export
 summary.auto_edina = function(object, ...) {
     print(object, ...)
-    invisible(as.data.frame(x$criterions))
+    invisible(as.data.frame(object$criterions))
 }
 

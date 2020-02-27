@@ -219,7 +219,7 @@ edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
 #' @param ...      Additional methods passed onto the `print.matrix` method.
 #'
 #' @export
-print.edina = function(x, binary_q = FALSE, ...){
+print.edina = function(x, binary = FALSE, ...){
     cat("The EDINA model for", x$dataset_name, "with K =", x$k, "\n\n")
 
     est_mat = cbind(extract_q_matrix(x, binary = binary), x$coefficients)

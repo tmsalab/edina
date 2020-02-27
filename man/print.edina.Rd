@@ -4,15 +4,15 @@
 \alias{print.edina}
 \title{Printing out the EDINA Object}
 \usage{
-\method{print}{edina}(x, binary_q = FALSE, ...)
+\method{print}{edina}(x, binary = FALSE, ...)
 }
 \arguments{
 \item{x}{An \code{edina} object}
 
-\item{...}{Additional methods passed onto the \code{print.matrix} method.}
-
 \item{binary}{Boolean to indicate whether the \emph{Q} matrix is shown in
 dichotomous form or in an estimated form.}
+
+\item{...}{Additional methods passed onto the \code{print.matrix} method.}
 }
 \description{
 Custom print method for computing the EDINA.
