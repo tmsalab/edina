@@ -19,16 +19,11 @@
 >   al (21:53)
 >   et (21:50)
 
-- The URLs inside the README will become active once the package is listed on CRAN.
-
-> Found the following (possibly) invalid URLs:
->  URL: http://www.r-pkg.org/pkg/edina (moved to https://www.r-pkg.org:443/pkg/edina)
->    From: README.md
->    Status: 404
->    Message: Not Found
->  URL: https://cran.r-project.org/web/checks/check_results_edina.html
->    From: README.md
->    Status: 404
->    Message: Not Found
-
-- We removed the DOI in the `README.md` and capitalized the B in Bayesian.
+- We've reduced the capitalization in the DESCRIPTION heading to only
+  capitalize names, sentence beginnings and abbreviations.
+- We've deactivated the DOI in the README and removed references to the 
+  r-pkg website. 
+- Whereever possible, we add small sample executables. That said, the
+  algorithm is O(2^k). 
+- Moreover, the example given for looking across time was switched from 
+  `\dontrun{}` to `\donttest{}` as it requires at least 15 seconds to run.
