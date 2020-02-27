@@ -89,20 +89,6 @@ auto_edina = function(data, k = 2:4,
     , class = "auto_edina" )
 }
 
-#' Extract the Best Model
-#'
-#' Extracts the best model from the `auto_*` search procedure.
-#'
-#' @param x  An `auto_edina` object
-#' @param ic Selection criteria
-#' @return An `edina` object
-#' @export
-best_model = function(x, ic = c("heuristic", "bic", "dic")) {
-    ic = tolower(ic)
-    ic = match.arg(ic)
-
-    x$edina_models[[which.min(x$criterion[,ic])]]
-}
 
 #' Print method for `auto_dina`
 #'
