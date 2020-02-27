@@ -19,6 +19,15 @@ Provides a way to create an object as a \code{"q_matrix"}.
 # Q matrix values
 x = matrix(c(1, 0, 0, 1), nrow = 2)
 
-# Construct class
+# Q matrix wrapper
 q_mat = q_matrix(x)
+
+# Data Frame encoding of Q
+q_df = data.frame(
+   k1 = c(1, 0),
+   k2 = c(0, 1)
+)
+
+# Create a Q matrix
+q_mat = q_matrix(q_df)
 }

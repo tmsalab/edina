@@ -23,3 +23,10 @@ as_q_matrix(x, ...)
 \description{
 \code{as.q_matrix} acts as an aliases.
 }
+\examples{
+# Q matrix values
+x = matrix(c(1, 0, 0, 1), nrow = 2)
+
+# Construct class
+q_mat = as_q_matrix(x)
+}

@@ -66,8 +66,17 @@ create_q_matrix = function(x) {
 #' # Q matrix values
 #' x = matrix(c(1, 0, 0, 1), nrow = 2)
 #'
-#' # Construct class
+#' # Q matrix wrapper
 #' q_mat = q_matrix(x)
+#'
+#' # Data Frame encoding of Q
+#' q_df = data.frame(
+#'    k1 = c(1, 0),
+#'    k2 = c(0, 1)
+#' )
+#'
+#' # Create a Q matrix
+#' q_mat = q_matrix(q_df)
 q_matrix = function(x) {
     as_q_matrix(x)
 }
@@ -81,6 +90,12 @@ q_matrix = function(x) {
 #'
 #' @rdname as_q_matrix
 #' @export
+#' @examples
+#' # Q matrix values
+#' x = matrix(c(1, 0, 0, 1), nrow = 2)
+#'
+#' # Construct class
+#' q_mat = as_q_matrix(x)
 as_q_matrix = function(x, ...) {
     UseMethod("as_q_matrix")
 }
