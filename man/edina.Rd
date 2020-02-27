@@ -68,6 +68,7 @@ subject_alphas = simcdm::sim_subject_attributes(N, K)
 # Simulate items under the DINA model
 items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 
+\donttest{
 # Compute the edina model
 edina_model = edina(items_dina, k = K)
 
@@ -76,7 +77,7 @@ edina_model
 
 # Provide a summary overview
 summary(edina_model)
-
+}
 }
 
 }

@@ -127,6 +127,7 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #' # Simulate items under the DINA model
 #' items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 #'
+#' \donttest{
 #' # Compute the edina model
 #' edina_model = edina(items_dina, k = K)
 #'
@@ -135,7 +136,7 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #'
 #' # Provide a summary overview
 #' summary(edina_model)
-#'
+#' }
 #' }
 #'
 edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
