@@ -35,5 +35,5 @@ values of the Q Matrix.
 }
 \examples{
 q = q_matrix(matrix(c(1, 0, 1, 1, 0, 1), ncol = 3))
-plot(q)
+q_graph(q)
 }
