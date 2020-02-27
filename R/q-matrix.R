@@ -35,10 +35,8 @@ format_q_matrix = function(x) {
 #' @noRd
 create_q_matrix = function(x) {
 
-    stopifnot(all(x %in% c(0, 1)))
-
-    # Verify invertibility
-    identified_q = check_identifiability(x)
+    # Verify Q matrix is identified
+    identified_q = all(x %in% c(0, 1)) && check_identifiability(x)
 
     # Structure Q matrix
     x = format_q_matrix(x)
@@ -140,8 +138,10 @@ print.q_matrix = function(x, ... ) {
 #'
 #' Given a modeling object, extract the Q Matrix
 #'
-#' @param x    An `edina` or `q_matrix` object
-#' @param ...  Additional parameters
+#' @param x      An `edina` or `q_matrix` object
+#' @param binary Boolean to indicate whether the _Q_ matrix is shown in
+#'               dichotomous form or in an estimated form.
+#' @param ...    Additional parameters
 #'
 #' @return A `matrix` that is either dichotomous or estimated.
 #'
@@ -155,6 +155,17 @@ extract_q_matrix = function(x, ...) {
 #' @export
 extract_q_matrix.q_matrix = function(x, ...) {
     x
+}
+
+
+#' @rdname extract_q
+#' @export
+extract_q_matrix.edina = function(x, binary = TRUE, ...) {
+    if(isTRUE(binary)) {
+        x$est_q
+    } else {
+        x$avg_q
+    }
 }
 
 #' @rdname extract_q
