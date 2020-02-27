@@ -4,14 +4,7 @@
 \alias{auto_edina}
 \title{Auto EDINA model selection routine}
 \usage{
-auto_edina(
-  data,
-  k = 2:4,
-  burnin = 10000,
-  chain_length = 20000,
-  save_results = FALSE,
-  save_filename = "edina_model_data"
-)
+auto_edina(data, k = 2:4, burnin = 10000, chain_length = 20000)
 }
 \arguments{
 \item{data}{Binary responses to assessements in \code{matrix}
@@ -22,30 +15,52 @@ form with dimensions \eqn{N \times J}{N x J}.}
 \item{burnin}{Number of Observations to discard on the chain.}
 
 \item{chain_length}{Length of the MCMC chain}
-
-\item{save_results}{Output intermediary estimations to R binary.
-Default: \code{FALSE}}
-
-\item{save_filename}{Name stem to save each \code{k} iteration to. Relevant if
-\code{save_results} is enabled.}
 }
 \value{
-An \code{auto_edina} object
+An \code{auto_edina} object.
 }
 \description{
 Automatically select an appropriate $K$ dimension for a $Q$ matrix
 under the Exploratory Determinatistic Input, Noise And gate (EDINA) Model.
 }
 \examples{
+if(requireNamespace("simcdm", quietly = TRUE)) {
+
+# Set a seed for reproducibility
+set.seed(1512)
+
+# Setup data simulation parameters
+N = 15   # Number of Examinees / Subjects
+J = 10   # Number of Items
+K = 2    # Number of Skills / Attributes
+
+# Note:
+# Sample size and attributes have been reduced to create a minimally
+# viable example that can be run during CRAN's automatic check.
+# Please make sure to have a larger sample size...
+
+# Assign slipping and guessing values for each item
+ss = gs = rep(.2, J)
+
+# Simulate an identifiable Q matrix
+Q = simcdm::sim_q_matrix(J, K)
+
+# Simulate subject attributes
+subject_alphas = simcdm::sim_subject_attributes(N, K)
+
+# Simulate items under the DINA model
+items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
+
 \dontrun{
-library("tmsadata")
+# Requires at least 15 seconds of execution time.
+# Three EDINA models will be fit with increasing number of attributes.
+model_set_edina = auto_edina(items_dina, k = 2:4)
 
-# Load data
-data("trial_matrix", package="tmsadata")
+# Display results
+edina_model
 
-# Coerce to matrix
-trial_matrix = as.matrix(trial_matrix)
-
-edina_models = auto_edina(trial_matrix, k = 1:2)
+table = summary(edina_model)
 }
+}
+
 }

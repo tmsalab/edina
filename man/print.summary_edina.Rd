@@ -4,12 +4,12 @@
 \alias{print.summary_edina}
 \title{Printing out the Summary EDINA Object}
 \usage{
-\method{print}{summary_edina}(x, binary_q = FALSE, ...)
+\method{print}{summary_edina}(x, binary = FALSE, ...)
 }
 \arguments{
 \item{x}{A \code{summary_edina} object}
 
-\item{binary_q}{Boolean to indicate whether the \emph{Q} matrix is shown in
+\item{binary}{Boolean to indicate whether the \emph{Q} matrix is shown in
 dichotomous form or in an estimated form.}
 
 \item{...}{Past onto the \code{print.data.frame} method.}

@@ -9,6 +9,16 @@ q_matrix(x)
 \arguments{
 \item{x}{Either a \code{data.frame} or \code{matrix}.}
 }
+\value{
+A \code{q_matrix} object.
+}
 \description{
-Provides a way to cast an object as a \code{"q_matrix"}.
+Provides a way to create an object as a \code{"q_matrix"}.
+}
+\examples{
+# Q matrix values
+x = matrix(c(1, 0, 0, 1), nrow = 2)
+
+# Construct class
+q_mat = q_matrix(x)
 }

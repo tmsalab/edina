@@ -40,7 +40,6 @@ An \code{edina} object that contains:
 Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
 }
 \examples{
-
 if(requireNamespace("simcdm", quietly = TRUE)) {
 
 # Set a seed for reproducibility
@@ -72,4 +71,5 @@ items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 edina_model = edina(items_dina, k = K)
 
 }
+
 }
