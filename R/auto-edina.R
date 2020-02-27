@@ -47,7 +47,7 @@
 #' # Simulate items under the DINA model
 #' items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 #'
-#' \dontrun{
+#' \donttest{
 #' # Requires at least 15 seconds of execution time.
 #' # Three EDINA models will be fit with increasing number of attributes.
 #' model_set_edina = auto_edina(items_dina, k = 2:4)
