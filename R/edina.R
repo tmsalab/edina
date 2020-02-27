@@ -68,7 +68,7 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #' @inheritParams summary.edina
 #' @return A `double` that is the mean.
 #' @export
-model_heuristic = function(object, alpha = 0.05) {
+PPP = function(object, alpha = 0.05) {
     or_tested = object$or_tested
 
     mean(or_tested[upper.tri(or_tested)] < alpha |
@@ -144,7 +144,6 @@ BIC.edina = function(object, ...) {
 #' @export
 #' @importFrom jjb is_whole
 #' @examples
-#'
 #' if(requireNamespace("simcdm", quietly = TRUE)) {
 #'
 #' # Set a seed for reproducibility
@@ -176,6 +175,7 @@ BIC.edina = function(object, ...) {
 #' edina_model = edina(items_dina, k = K)
 #'
 #' }
+#'
 edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
 
     stopifnot(is.matrix(data))
@@ -241,7 +241,7 @@ print.edina = function(x, binary_q = FALSE, ...){
 summary.edina = function(object, alpha = 0.05, ...) {
 
     model_fit = matrix(c(object$k, BIC(object), DIC(object),
-                         model_heuristic(object, alpha)), ncol = 4)
+                         PPP(object, alpha)), ncol = 4)
 
     colnames(model_fit) = c("k", "bic", "dic", "heuristic")
 
