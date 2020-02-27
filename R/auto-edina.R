@@ -12,6 +12,12 @@
 #' @return
 #' An `auto_edina` object.
 #'
+#' @seealso
+#' [autoplot.auto_edina()],
+#' [best_model()],
+#' [model_selection_graph()],
+#' [parameter_evolution_graph()]
+#'
 #' @export
 #' @examples
 #' if(requireNamespace("simcdm", quietly = TRUE)) {
@@ -47,9 +53,13 @@
 #' model_set_edina = auto_edina(items_dina, k = 2:4)
 #'
 #' # Display results
-#' edina_model
+#' model_set_edina
 #'
-#' table = summary(edina_model)
+#' # Retrieve criterion table
+#' table = summary(model_set_edina)
+#'
+#' # Extract "best model"
+#' best_model(model_set_edina)
 #' }
 #' }
 #'
