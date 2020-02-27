@@ -117,8 +117,8 @@ print.auto_edina = function(x, ...) {
 #'
 #' Custom summarization method for displaying the results of the `auto_edina`.
 #'
-#' @param x   An `auto_edina` object
-#' @param ... Additional methods passed onto the `print.data.frame` method.
+#' @param object An `auto_edina` object
+#' @param ...    Additional methods passed onto the `print.data.frame` method.
 #'
 #' @return
 #' An invisible `data.frame` containing criterion information.

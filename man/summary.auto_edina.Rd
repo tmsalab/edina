@@ -7,9 +7,9 @@
 \method{summary}{auto_edina}(object, ...)
 }
 \arguments{
-\item{...}{Additional methods passed onto the \code{print.data.frame} method.}
+\item{object}{An \code{auto_edina} object}
 
-\item{x}{An \code{auto_edina} object}
+\item{...}{Additional methods passed onto the \code{print.data.frame} method.}
 }
 \value{
 An invisible \code{data.frame} containing criterion information.
