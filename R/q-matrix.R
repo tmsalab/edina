@@ -1,30 +1,77 @@
-create_q_matrix = function(x) {
+## Formatting Tools for Q Matrices ----
 
+#' Format Q Matrix
+#'
+#' Applies a common naming scheme to the Q Matrix.
+#'
+#' @param x A [`base::matrix()`] with dimensions \eqn{J \times K}{J x K}.
+#'
+#' @noRd
+format_q_matrix = function(x) {
+
+    # Extract dimensions
     j = nrow(x)
     k = ncol(x)
 
-    colnames(x) = sprintf(paste0("Trait","%0",
-                                 nchar(k), "d"), seq_len(k))
+    # Pad naming with 0's
+    colnames(x) = sprintf(paste0("Trait%0", nchar(k), "d"), seq_len(k))
+    rownames(x) = sprintf(paste0("Item%0", nchar(j), "d"), seq_len(j))
 
-    rownames(x) = sprintf(paste0("Items","%0",
-                                 nchar(j), "d"), seq_len(j))
+    # Release
+    x
+}
 
+## Convert Data to Q Matrix Object ----
+
+#' Constructor for Q Matrix
+#'
+#' Standardizes the initialization for a Q Matrix in _R_.
+#'
+#' @param x A [`base::matrix()`] with dimensions \eqn{J x K}.
+#'
+#' @return
+#' A `q_matrix` object with a fallback to `matrix`.
+#'
+#' @noRd
+create_q_matrix = function(x) {
+
+    stopifnot(all(x %in% c(0, 1)))
+
+    # Verify invertibility
     identified_q = check_identifiability(x)
 
+    # Structure Q matrix
+    x = format_q_matrix(x)
+
+    # Apply classes
     class(x) = c('q_matrix', class(x))
+
+    # Embed information
     attr(x, 'identifiable') = identified_q
 
+    # Release result
     x
 }
 
 #' Create a Q Matrix Object
 #'
-#' Provides a way to cast an object as a `"q_matrix"`.
+#' Provides a way to create an object as a `"q_matrix"`.
 #'
 #' @param x        Either a `data.frame` or `matrix`.
+#'
+#' @return
+#' A `q_matrix` object.
+#'
 #' @export
+#'
+#' @examples
+#' # Q matrix values
+#' x = matrix(c(1, 0, 0, 1), nrow = 2)
+#'
+#' # Construct class
+#' q_mat = q_matrix(x)
 q_matrix = function(x) {
-    as.q_matrix(x)
+    as_q_matrix(x)
 }
 
 #' Coerce `data.frame` and `matrix` classes to Q Matrix.
@@ -36,29 +83,27 @@ q_matrix = function(x) {
 #'
 #' @rdname as_q_matrix
 #' @export
-as.q_matrix = function(x, ...) {
-    UseMethod("as.q_matrix")
+as_q_matrix = function(x, ...) {
+    UseMethod("as_q_matrix")
 }
 
 #' @export
 #' @rdname as_q_matrix
-as.q_matrix.data.frame = function(x, ...) {
+as_q_matrix.data.frame = function(x, ...) {
     x = as.matrix(x)
-    stopifnot(typeof(x) != "character")
     create_q_matrix(x)
 }
 
 #' @export
 #' @rdname as_q_matrix
-as.q_matrix.matrix = function(x, ...) {
-    stopifnot(typeof(x) != "character")
+as_q_matrix.matrix = function(x, ...) {
     create_q_matrix(x)
 }
 
 #' @export
 #' @rdname as_q_matrix
-as.q_matrix.default = function(x, ...) {
-    stop("Type not yet supported for conversion to `q_matrix`.")
+as_q_matrix.default = function(x, ...) {
+    stop(class(x)[1], " is not yet supported for conversion to `q_matrix`.")
 }
 
 #' Printing out a Q Matrix Object
@@ -73,24 +118,29 @@ print.q_matrix = function(x, ... ) {
 
     cat("Q Matrix properties\n")
     cat("   Items: ", nrow(x), "\n")
-    cat("   Traits: ", ncol(x), "\n\n")
+    cat("   Traits: ", ncol(x), "\n")
+    cat("   Identifiable: ")
 
+    # Creative use of STDERROR vs. STDOUT. Might back fire.
     if(attr(x, "identifiable")) {
-        cat("The Q Matrix supplied is not identifiable. \n")
+        cat("Yes. \n\n")
     } else {
-        message("The Q Matrix supplied is not identifiable.")
+        message(" No.\n")
     }
+
     class(x) = "matrix"
     attributes(x)["identifiable"] = NULL
     print(x, ...)
     invisible(x)
 }
 
+## Extract Q Matrices from Data Objects ----
+
 #' Extract Q Matrix
 #'
 #' Given a modeling object, extract the Q Matrix
 #'
-#' @param x    An `edina`, `dina`, `errum`, or `rrum` object
+#' @param x    An `edina` or `q_matrix` object
 #' @param ...  Additional parameters
 #'
 #' @return A `matrix` that is either dichotomous or estimated.
@@ -99,33 +149,6 @@ print.q_matrix = function(x, ... ) {
 #' @export
 extract_q_matrix = function(x, ...) {
     UseMethod("extract_q_matrix")
-}
-
-#' @param binary_q   Classified Q matrix or a rounded Q matrix.
-#' @rdname extract_q
-#' @export
-extract_q_matrix.edina = function(x, binary_q = FALSE, ...) {
-    stopifnot(inherits(x, "edina"))
-    pull_est_q_matrix(x, binary_q)
-}
-
-#' @inheritParams best_model
-#' @rdname extract_q
-#' @export
-extract_q_matrix.auto_edina = function(x, binary_q = FALSE,
-                                       ic = c("heuristic", "bic", "dic"),
-                                       ...) {
-
-    stopifnot(inherits(x, "auto_edina"))
-    pull_est_q_matrix(best_model(x, ic = ic), binary_q)
-}
-
-#' @rdname extract_q
-#' @export
-extract_q_matrix.errum = function(x, binary_q = FALSE, ...) {
-    stopifnot(inherits(x, "errum"))
-
-    pull_est_q_matrix(x, binary_q)
 }
 
 #' @rdname extract_q
@@ -137,22 +160,5 @@ extract_q_matrix.q_matrix = function(x, ...) {
 #' @rdname extract_q
 #' @export
 extract_q_matrix.default = function(x, ...) {
-    stop("`x` must be a supported type.")
-}
-
-
-pull_est_q_matrix = function(x, binary_q = FALSE) {
-    if(binary_q) {
-        x$est_q
-    } else {
-        x$avg_q
-    }
-}
-
-format_q_matrix = function(x) {
-    colnames(x) = paste0("Trait", seq_len(ncol(x)))
-    rownames(x) = paste0("Item", seq_len(nrow(x)) )
-    x
-}
     stop("'", class(x)[1], "' is not yet supported for extracting a `q_matrix`.")
 }
