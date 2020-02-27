@@ -60,8 +60,9 @@ create_q_matrix = function(x) {
 #' @return
 #' A `q_matrix` object.
 #'
-#' @export
+#' @seealso [as_q_matrix()]
 #'
+#' @export
 #' @examples
 #' # Q matrix values
 #' x = matrix(c(1, 0, 0, 1), nrow = 2)
@@ -126,6 +127,9 @@ as_q_matrix.default = function(x, ...) {
 #' @param x        An `q_matrix` object
 #' @param ...      Additional methods passed onto the `print.matrix` method.
 #'
+#' @seealso
+#' [q_matrix()]
+#'
 #' @export
 print.q_matrix = function(x, ... ) {
 
@@ -158,7 +162,13 @@ print.q_matrix = function(x, ... ) {
 #'               dichotomous form or in an estimated form.
 #' @param ...    Additional parameters
 #'
-#' @return A `matrix` that is either dichotomous or estimated.
+#' @return
+#' A `matrix` that is either dichotomous or estimated.
+#'
+#' @seealso
+#' [q_matrix()],
+#' [edina()],
+#' [auto_edina()]
 #'
 #' @rdname extract_q
 #' @export

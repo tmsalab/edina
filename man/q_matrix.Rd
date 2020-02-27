@@ -31,3 +31,6 @@ q_df = data.frame(
 # Create a Q matrix
 q_mat = q_matrix(q_df)
 }
+\seealso{
+\code{\link[=as_q_matrix]{as_q_matrix()}}
+}

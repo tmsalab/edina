@@ -29,3 +29,8 @@ A \code{matrix} that is either dichotomous or estimated.
 \description{
 Given a modeling object, extract the Q Matrix
 }
+\seealso{
+\code{\link[=q_matrix]{q_matrix()}},
+\code{\link[=edina]{edina()}},
+\code{\link[=auto_edina]{auto_edina()}}
+}

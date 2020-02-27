@@ -14,3 +14,6 @@
 \description{
 Custom print method for the Q Matrix Object.
 }
+\seealso{
+\code{\link[=q_matrix]{q_matrix()}}
+}
