@@ -73,3 +73,9 @@ parameter_evolution_graph(model_set_edina, type = "guessing")
 }
 }
 }
+\seealso{
+\code{\link[=auto_edina]{auto_edina()}},
+\code{\link[=best_model]{best_model()}},
+\code{\link[=model_selection_graph]{model_selection_graph()}},
+\code{\link[=parameter_evolution_graph]{parameter_evolution_graph()}}
+}

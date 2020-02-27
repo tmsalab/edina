@@ -57,10 +57,20 @@ items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 model_set_edina = auto_edina(items_dina, k = 2:4)
 
 # Display results
-edina_model
+model_set_edina
 
-table = summary(edina_model)
+# Retrieve criterion table
+table = summary(model_set_edina)
+
+# Extract "best model"
+best_model(model_set_edina)
 }
 }
 
+}
+\seealso{
+\code{\link[=autoplot.auto_edina]{autoplot.auto_edina()}},
+\code{\link[=best_model]{best_model()}},
+\code{\link[=model_selection_graph]{model_selection_graph()}},
+\code{\link[=parameter_evolution_graph]{parameter_evolution_graph()}}
 }

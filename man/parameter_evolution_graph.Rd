@@ -11,7 +11,13 @@ parameter_evolution_graph(x, ...)
 
 \item{...}{Not used}
 }
+\value{
+A \code{ggplot2} object
+}
 \description{
 Displays the slipping and guessing parameter changes for each model across
 the dimensions the Q matrix is estimated.
+}
+\seealso{
+\code{\link[=autoplot.auto_edina]{autoplot.auto_edina()}}
 }

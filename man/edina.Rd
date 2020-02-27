@@ -70,6 +70,17 @@ items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 # Compute the edina model
 edina_model = edina(items_dina, k = K)
 
+# Display results
+edina_model
+
+# Provide a summary overview
+summary(edina_model)
+
 }
 
+}
+\seealso{
+\code{\link[=auto_edina]{auto_edina()}},
+\code{\link[=summary.edina]{summary.edina()}},
+\code{\link[=print.edina]{print.edina()}}
 }
