@@ -7,7 +7,14 @@
 #' @param type   Kind of graph to display. Valid types: `"selection"` or `"evolution"`.
 #' @param ... Not used.
 #'
-#' @return A `ggplot2` object.
+#' @return
+#' A `ggplot2` object.
+#'
+#' @seealso
+#' [auto_edina()],
+#' [best_model()],
+#' [model_selection_graph()],
+#' [parameter_evolution_graph()]
 #'
 #' @export
 #' @importFrom ggplot2 autoplot ggplot geom_line geom_point geom_vline facet_wrap labs aes theme_bw theme element_text
@@ -83,8 +90,15 @@ autoplot.auto_edina = function(object,
 #'
 #' @param x   An `auto_edina` or `auto_errum` object.
 #' @param ... Not used
-#' @export
 #'
+#' @return
+#'
+#' A `ggplot2` object
+#'
+#' @seealso
+#' [autoplot.auto_edina()]
+#'
+#' @export
 #' @importFrom stats reshape
 model_selection_graph = function(x, ...){
     UseMethod("model_selection_graph", x)
@@ -132,6 +146,14 @@ model_selection_graph.default = function(x, ...){
 #'
 #' @param x   An `auto_edina` or `auto_errum` object.
 #' @param ... Not used
+#'
+#' @return
+#'
+#' A `ggplot2` object
+#'
+#' @seealso
+#' [autoplot.auto_edina()]
+#'
 #' @export
 parameter_evolution_graph = function(x, ...) {
     UseMethod("parameter_evolution_graph", x)
