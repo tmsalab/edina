@@ -23,7 +23,7 @@
   capitalize names, sentence beginnings and abbreviations.
 - We've deactivated the DOI in the README and removed references to the 
   r-pkg website. 
-- Whereever possible, we add small sample executables. That said, the
+- wherever possible, we added small sample executables. That said, the
   algorithm is O(2^k). 
-- Moreover, the example given for looking across time was switched from 
-  `\dontrun{}` to `\donttest{}` as it requires at least 15 seconds to run.
+- As a result, the examples given need to be protected with `\donttest{}` as 
+  they require at least 5 seconds to run. 
