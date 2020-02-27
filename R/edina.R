@@ -64,10 +64,10 @@ new_edina_summary = function(edina, model_fit, alpha) {
 
 #' EDINA Estimation Routine
 #'
-#' Performs the Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
+#' Performs the Exploratory Deterministic Input, Noise and Gate Model (EDINA)
 #' estimation on a given data set with a pre-specified `k` value.
 #'
-#' @param data         Binary responses to assessements in `matrix`
+#' @param data         Binary responses to assessments in `matrix`
 #'                     form with dimensions \eqn{N \times J}{N x J}.
 #' @param k            Number of Attribute Levels as a positive `integer`.
 #' @param burnin       Number of Observations to discard on the chain.
@@ -78,7 +78,7 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #'
 #' - `coefficients`: Estimated coefficients of the model fit
 #' - `loglike_summed`: Summed log-likelihood
-#' - `loglike_pmean`: Meaned version of log-likelihood
+#' - `loglike_pmean`: Mean of log-likelihood
 #' - `pi_classes`: Latent classes
 #' - `avg_q`: Estimated Averaged Q Matrix
 #' - `est_q`: Estimated Dichotomous Q Matrix
@@ -191,9 +191,9 @@ print.edina = function(x, binary = FALSE, ...){
     invisible(est_mat)
 }
 
-#' Summarizing the EDINA Object
+#' Summarize the EDINA Object
 #'
-#' Determine whether the `edina` object is summarized appropriately.
+#' Provide a more detailed view inside of `edina` model object.
 #'
 #' @param object An `edina` object
 #' @param alpha  Defining region to indicate the level of extremeness

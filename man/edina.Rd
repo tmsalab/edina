@@ -7,7 +7,7 @@
 edina(data, k = 3, burnin = 10000, chain_length = 20000)
 }
 \arguments{
-\item{data}{Binary responses to assessements in \code{matrix}
+\item{data}{Binary responses to assessments in \code{matrix}
 form with dimensions \eqn{N \times J}{N x J}.}
 
 \item{k}{Number of Attribute Levels as a positive \code{integer}.}
@@ -21,7 +21,7 @@ An \code{edina} object that contains:
 \itemize{
 \item \code{coefficients}: Estimated coefficients of the model fit
 \item \code{loglike_summed}: Summed log-likelihood
-\item \code{loglike_pmean}: Meaned version of log-likelihood
+\item \code{loglike_pmean}: Mean of log-likelihood
 \item \code{pi_classes}: Latent classes
 \item \code{avg_q}: Estimated Averaged Q Matrix
 \item \code{est_q}: Estimated Dichotomous Q Matrix
@@ -37,7 +37,7 @@ An \code{edina} object that contains:
 }
 }
 \description{
-Performs the Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
+Performs the Exploratory Deterministic Input, Noise and Gate Model (EDINA)
 estimation on a given data set with a pre-specified \code{k} value.
 }
 \examples{

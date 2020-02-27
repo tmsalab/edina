@@ -2,7 +2,7 @@
 % Please edit documentation in R/edina.R
 \name{summary.edina}
 \alias{summary.edina}
-\title{Summarizing the EDINA Object}
+\title{Summarize the EDINA Object}
 \usage{
 \method{summary}{edina}(object, alpha = 0.05, ...)
 }
@@ -15,5 +15,5 @@ the data must before the model is problematic.}
 \item{...}{Not used.}
 }
 \description{
-Determine whether the \code{edina} object is summarized appropriately.
+Provide a more detailed view inside of \code{edina} model object.
 }

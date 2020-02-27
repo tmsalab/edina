@@ -3,8 +3,8 @@
 #' Provides a heatmap approach to showing the estimated binary or averaged
 #' values of the Q Matrix.
 #'
-#' @param x Either an `edina`, `auto_edina`, or `q_matrix` object.
-#' @param ... Additional paramters not used
+#' @param x   Either an `edina`, `auto_edina`, or `q_matrix` object.
+#' @param ... Additional parameters not used
 #'
 #' @export
 #' @rdname q_graph

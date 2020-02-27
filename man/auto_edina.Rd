@@ -7,7 +7,7 @@
 auto_edina(data, k = 2:4, burnin = 10000, chain_length = 20000)
 }
 \arguments{
-\item{data}{Binary responses to assessements in \code{matrix}
+\item{data}{Binary responses to assessments in \code{matrix}
 form with dimensions \eqn{N \times J}{N x J}.}
 
 \item{k}{Number of Attribute Levels as a positive \code{integer}.}
@@ -21,7 +21,7 @@ An \code{auto_edina} object.
 }
 \description{
 Automatically select an appropriate $K$ dimension for a $Q$ matrix
-under the Exploratory Determinatistic Input, Noise And gate (EDINA) Model.
+under the Exploratory Deterministic Input, Noise And gate (EDINA) Model.
 }
 \examples{
 if(requireNamespace("simcdm", quietly = TRUE)) {

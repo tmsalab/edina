@@ -21,7 +21,7 @@ q_graph(x, ...)
 \arguments{
 \item{x}{Either an \code{edina}, \code{auto_edina}, or \code{q_matrix} object.}
 
-\item{...}{Additional paramters not used}
+\item{...}{Additional parameters not used}
 
 \item{binary}{Boolean to indicate if a classified Q (dichotomous by decision rule)
 or an estimate Q (non-dichotomous) or should be shown.

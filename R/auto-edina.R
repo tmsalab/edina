@@ -1,9 +1,9 @@
 #' Auto EDINA model selection routine
 #'
 #' Automatically select an appropriate $K$ dimension for a $Q$ matrix
-#' under the Exploratory Determinatistic Input, Noise And gate (EDINA) Model.
+#' under the Exploratory Deterministic Input, Noise And gate (EDINA) Model.
 #'
-#' @param data          Binary responses to assessements in `matrix`
+#' @param data          Binary responses to assessments in `matrix`
 #'                      form with dimensions \eqn{N \times J}{N x J}.
 #' @param k             Number of Attribute Levels as a positive `integer`.
 #' @param burnin        Number of Observations to discard on the chain.

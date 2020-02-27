@@ -10,7 +10,7 @@ status](https://github.com/tmsalab/edina/workflows/R-CMD-check/badge.svg)](https
 [![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 <!-- badges: end -->
 
-Perform a bayesian estimation of the Exploratory Deterministic Input,
+Perform a Bayesian estimation of the Exploratory Deterministic Input,
 Noisy “And” Gate (EDINA) cognitive diagnostic model described by Chen et
 al. (2018).
 
