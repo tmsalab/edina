@@ -52,11 +52,9 @@
 #' model_set_edina = auto_edina(items_dina, k = 2:4)
 #'
 #' # Visualize results results
-#'
 #' autoplot(model_set_edina, type = "selection")
 #'
 #' # Equivalent to:
-#'
 #' model_selection_graph(model_set_edina)
 #'
 #' # View model parameters

@@ -3,6 +3,7 @@
 \name{extract_q_matrix}
 \alias{extract_q_matrix}
 \alias{extract_q_matrix.q_matrix}
+\alias{extract_q_matrix.edina}
 \alias{extract_q_matrix.default}
 \title{Extract Q Matrix}
 \usage{
@@ -10,12 +11,17 @@ extract_q_matrix(x, ...)
 
 \method{extract_q_matrix}{q_matrix}(x, ...)
 
+\method{extract_q_matrix}{edina}(x, binary = TRUE, ...)
+
 \method{extract_q_matrix}{default}(x, ...)
 }
 \arguments{
 \item{x}{An \code{edina} or \code{q_matrix} object}
 
 \item{...}{Additional parameters}
+
+\item{binary}{Boolean to indicate whether the \emph{Q} matrix is shown in
+dichotomous form or in an estimated form.}
 }
 \value{
 A \code{matrix} that is either dichotomous or estimated.

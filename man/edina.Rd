@@ -2,7 +2,7 @@
 % Please edit documentation in R/edina.R
 \name{edina}
 \alias{edina}
-\title{EDINA estimation routine}
+\title{EDINA Estimation Routine}
 \usage{
 edina(data, k = 3, burnin = 10000, chain_length = 20000)
 }
@@ -37,7 +37,8 @@ An \code{edina} object that contains:
 }
 }
 \description{
-Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
+Performs the Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
+estimation on a given data set with a pre-specified \code{k} value.
 }
 \examples{
 if(requireNamespace("simcdm", quietly = TRUE)) {

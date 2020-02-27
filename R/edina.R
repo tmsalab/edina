@@ -62,9 +62,10 @@ new_edina_summary = function(edina, model_fit, alpha) {
 }
 
 
-#' EDINA estimation routine
+#' EDINA Estimation Routine
 #'
-#' Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
+#' Performs the Exploratory Determinatistic Input, Noise and Gate Model (EDINA)
+#' estimation on a given data set with a pre-specified `k` value.
 #'
 #' @param data         Binary responses to assessements in `matrix`
 #'                     form with dimensions \eqn{N \times J}{N x J}.
@@ -72,7 +73,8 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #' @param burnin       Number of Observations to discard on the chain.
 #' @param chain_length Length of the MCMC chain
 #'
-#' @return An `edina` object that contains:
+#' @return
+#' An `edina` object that contains:
 #'
 #' - `coefficients`: Estimated coefficients of the model fit
 #' - `loglike_summed`: Summed log-likelihood
