@@ -1,6 +1,6 @@
 #' Auto EDINA model selection routine
 #'
-#' Automatically select an appropriate $K$ dimension for a $Q$ matrix
+#' Automatically select an appropriate \eqn{K} dimension for a \eqn{Q} matrix
 #' under the Exploratory Deterministic Input, Noise And gate (EDINA) Model.
 #'
 #' @param data          Binary responses to assessments in `matrix`
@@ -125,7 +125,7 @@ print.auto_edina = function(x, ...) {
 
 #' Summarize `auto_edina` model data
 #'
-#' Custom summarization method for displaying the results of the `auto_edina`.
+#' Custom method for displaying the results of the `auto_edina`.
 #'
 #' @param object An `auto_edina` object
 #' @param ...    Additional methods passed onto the `print.data.frame` method.

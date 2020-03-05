@@ -15,5 +15,5 @@
 An invisible \code{data.frame} containing criterion information.
 }
 \description{
-Custom summarization method for displaying the results of the \code{auto_edina}.
+Custom method for displaying the results of the \code{auto_edina}.
 }
