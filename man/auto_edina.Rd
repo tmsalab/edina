@@ -20,7 +20,7 @@ form with dimensions \eqn{N \times J}{N x J}.}
 An \code{auto_edina} object.
 }
 \description{
-Automatically select an appropriate $K$ dimension for a $Q$ matrix
+Automatically select an appropriate \eqn{K} dimension for a \eqn{Q} matrix
 under the Exploratory Deterministic Input, Noise And gate (EDINA) Model.
 }
 \examples{

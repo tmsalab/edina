@@ -38,7 +38,7 @@ An \code{edina} object that contains:
 }
 \description{
 Performs the Exploratory Deterministic Input, Noise and Gate Model (EDINA)
-estimation on a given data set with a pre-specified \code{k} value.
+estimation on a given data set with a prespecified \code{k} value.
 }
 \examples{
 if(requireNamespace("simcdm", quietly = TRUE)) {

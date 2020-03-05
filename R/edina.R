@@ -65,7 +65,7 @@ new_edina_summary = function(edina, model_fit, alpha) {
 #' EDINA Estimation Routine
 #'
 #' Performs the Exploratory Deterministic Input, Noise and Gate Model (EDINA)
-#' estimation on a given data set with a pre-specified `k` value.
+#' estimation on a given data set with a prespecified `k` value.
 #'
 #' @param data         Binary responses to assessments in `matrix`
 #'                     form with dimensions \eqn{N \times J}{N x J}.
