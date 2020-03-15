@@ -31,7 +31,7 @@ if(requireNamespace("simcdm", quietly = TRUE)) {
 set.seed(1512)
 
 # Setup data simulation parameters
-N = 15   # Number of Examinees / Subjects
+N = 2    # Number of Examinees / Subjects
 J = 10   # Number of Items
 K = 2    # Number of Skills / Attributes
 
