@@ -1,7 +1,7 @@
 ## Test environments
 
-- local R installation, R 3.6.2
-- ubuntu 16.04 (on travis-ci), R 3.6.2
+- local R installation, R 3.6.3
+- ubuntu 16.04 (on GitHub Actions), R 3.6.3
 - win-builder (devel)
 
 ## R CMD check results
@@ -16,9 +16,13 @@
   to "et al.".
 
 > Possibly mis-spelled words in DESCRIPTION:
->   al (21:53)
->   et (21:50)
+> EDINA (20:42)
+> al (21:53)
+> et (21:50)
 
-- From the last submission, 
-  we've removed quotes surrounding the `and` and `EDINA` acronym from the 
-  package description and title.
+- From the last submission:
+
+- We have made sure all examples are using `donttest` if they exceed the
+  5 second execution threshold.
+- Each function now also has a `Value` field that describes what is returned or
+  what side-effect occurs. 
