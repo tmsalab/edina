@@ -10,7 +10,12 @@
 #' @param chain_length  Length of the MCMC chain
 #'
 #' @return
-#' An `auto_edina` object.
+#' An `auto_edina` object that contains:
+#'
+#' - `edina_models`: A list containing all estimated `edina` model objects.
+#' - `criterions`: Information criterions calculated for each model
+#' - `k_checked`: Varying `k` dimensions checked.
+#' - `j`: Number of Items
 #'
 #' @seealso
 #' [autoplot.auto_edina()],
@@ -115,7 +120,14 @@ auto_edina = function(data, k = 2:4,
 #' Custom print method for displaying the results of the Auto EDINA method.
 #'
 #' @param x   An `auto_edina` object
-#' @param ... Additional methods passed onto the `print.data.frame` method.
+#' @param ... Additional values passed onto the `print.data.frame` method.
+#'
+#' @return
+#' None.
+#'
+#' The function provides a side-effect of displaying the overview of
+#' computed results across all models estimated.
+#'
 #' @export
 print.auto_edina = function(x, ...) {
     cat("The results of searching Q-matrices between", min(x$k_checked),
@@ -128,14 +140,32 @@ print.auto_edina = function(x, ...) {
 #' Custom method for displaying the results of the `auto_edina`.
 #'
 #' @param object An `auto_edina` object
-#' @param ...    Additional methods passed onto the `print.data.frame` method.
+#' @param ...    Not used.
 #'
 #' @return
-#' An invisible `data.frame` containing criterion information.
+#' The original `auto_edina` object with an added class of `summary.auto_edina`.
 #'
 #' @export
 summary.auto_edina = function(object, ...) {
-    print(object, ...)
-    invisible(as.data.frame(object$criterions))
+   class(object) = c('summary.auto_edina', class(object))
+   object
+}
+
+#' Print the `auto_edina` model summary
+#'
+#' Custom method for displaying the results of the `summary(auto_edina)`.
+#'
+#' @param x   An `auto_edina` object
+#' @param ... Additional values passed onto the `print.data.frame` method.
+#'
+#' @return
+#' None.
+#'
+#' The function provides a side-effect of displaying the overview of
+#' computed results across all models estimated.
+#'
+#' @export
+print.summary.auto_edina = function(x, ...) {
+    NextMethod()
 }
 

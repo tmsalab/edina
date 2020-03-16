@@ -9,10 +9,10 @@
 \arguments{
 \item{object}{An \code{auto_edina} object}
 
-\item{...}{Additional methods passed onto the \code{print.data.frame} method.}
+\item{...}{Not used.}
 }
 \value{
-An invisible \code{data.frame} containing criterion information.
+The original \code{auto_edina} object with an added class of \code{summary.auto_edina}.
 }
 \description{
 Custom method for displaying the results of the \code{auto_edina}.
