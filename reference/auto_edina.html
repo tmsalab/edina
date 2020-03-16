@@ -52,6 +52,16 @@ under the Exploratory Deterministic Input, Noise And gate (EDINA) Model." />
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151562227-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151562227-1');
+</script>
+
 
   </head>
 
@@ -76,16 +86,22 @@ under the Exploratory Deterministic Input, Noise And gate (EDINA) Model." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
+  <a href="../index.html">Home</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../news/index.html">Changelog</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    News
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../news/index.html">Change log</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -194,7 +210,7 @@ form with dimensions \(N \times J\).</p></td>
 <span class='co'># Extract "best model"</span>
 <span class='fu'><a href='best_model.html'>best_model</a></span>(<span class='no'>model_set_edina</span>)
 <span class='co'># }</span>
-}</div><div class='output co'>#&gt; <span class='message'>Starting the estimation procedure ... </span></div><div class='output co'>#&gt; <span class='message'>Working on k = 2 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 2.71</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 3 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 3.522</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 4 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 5.098</span></div><div class='output co'>#&gt; The results of searching Q-matrices between 2 and 4 ...
+}</div><div class='output co'>#&gt; <span class='message'>Starting the estimation procedure ... </span></div><div class='output co'>#&gt; <span class='message'>Working on k = 2 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 2.602</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 3 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 3.937</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 4 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 4.923</span></div><div class='output co'>#&gt; The results of searching Q-matrices between 2 and 4 ...
 #&gt;  k   bic   dic     ppp
 #&gt;  2 318.8 175.2 0.02222
 #&gt;  3 382.5 156.8 0.02222

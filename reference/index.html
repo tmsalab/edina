@@ -50,6 +50,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151562227-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151562227-1');
+</script>
+
 
   </head>
 
@@ -74,16 +84,22 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
+  <a href="../index.html">Home</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../news/index.html">Changelog</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    News
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../news/index.html">Change log</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -120,124 +136,16 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
+          <h2 id="section-estimation" class="hasAnchor"><a href="#section-estimation" class="anchor"></a>Estimation</h2>
+          <p class="section-desc"><p>Perform a Bayesian estimation of the Exploratory Deterministic Input, Noisy “And” Gate (EDINA) cognitive diagnostic model described by Chen et al. (2018).</p></p>
         </th>
       </tr>
       <tr>
         
         <td>
-          <p><code><a href="BIC.edina.html">BIC(<i>&lt;edina&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Calculate BIC for EDINA models.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="DIC.html">DIC()</a></code> </p>
-        </td>
-        <td><p>Compute the Deviance Information Criterion (DIC)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="PPP.html">PPP()</a></code> </p>
-        </td>
-        <td><p>Model Heuristic used for Model Selection</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="as_q_matrix.html">as_q_matrix()</a></code> </p>
-        </td>
-        <td><p>Coerce <code>data.frame</code> and <code>matrix</code> classes to Q Matrix.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="auto_edina.html">auto_edina()</a></code> </p>
-        </td>
-        <td><p>Auto EDINA model selection routine</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="autoplot.auto_edina.html">autoplot(<i>&lt;auto_edina&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Graph the Auto EDINA Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="best_model.html">best_model()</a></code> </p>
-        </td>
-        <td><p>Extract the Best Model</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="edina.html">edina()</a></code> </p>
         </td>
         <td><p>EDINA Estimation Routine</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="extract_q.html">extract_q_matrix()</a></code> </p>
-        </td>
-        <td><p>Extract Q Matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model_selection_graph.html">model_selection_graph()</a></code> </p>
-        </td>
-        <td><p>View Model Selection Statistics Across Models</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="parameter_evolution_graph.html">parameter_evolution_graph()</a></code> </p>
-        </td>
-        <td><p>View Slipping and Guessing Parameter Changes Across Models</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.auto_edina.html">print(<i>&lt;auto_edina&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Print method for <code>auto_edina</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.edina.html">print(<i>&lt;edina&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Printing out the EDINA Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.q_matrix.html">print(<i>&lt;q_matrix&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Printing out a Q Matrix Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.summary_edina.html">print(<i>&lt;summary_edina&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Printing out the Summary EDINA Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="q_graph.html">q_graph()</a></code> </p>
-        </td>
-        <td><p>Graph Q Matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="q_matrix.html">q_matrix()</a></code> </p>
-        </td>
-        <td><p>Create a Q Matrix Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary.auto_edina.html">summary(<i>&lt;auto_edina&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summarize <code>auto_edina</code> model data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary.edina.html">summary(<i>&lt;edina&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summarize the EDINA Object</p></td>
       </tr>
     </tbody>
     </table>
@@ -246,7 +154,7 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-estimation">Estimation</a></li>
     </ul>
   </div>
 </div>
