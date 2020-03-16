@@ -27,7 +27,10 @@ q_graph(x, ...)
 or an estimate Q (non-dichotomous) or should be shown.
 Default: \code{TRUE}.}
 
-\item{ic}{Selection criteria}
+\item{ic}{Information criterion name. Default \code{"ppp"}.}
+}
+\value{
+A \code{ggplot2} object with a heatmap overview of the estimated Q matrix.
 }
 \description{
 Provides a heatmap approach to showing the estimated binary or averaged

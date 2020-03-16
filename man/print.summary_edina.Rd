@@ -14,6 +14,12 @@ dichotomous form or in an estimated form.}
 
 \item{...}{Past onto the \code{print.data.frame} method.}
 }
+\value{
+None.
+
+The function provides a side-effect of displaying the overview of
+the model estimated.
+}
 \description{
 Custom print method for displaying the EDINA model summary information.
 }

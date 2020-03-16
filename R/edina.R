@@ -1,6 +1,7 @@
 #' Construct an EDINA object
 #'
 #' Constructor function to satisfy the EDINA object definition
+#'
 #' @param coefs          Matrix with means of guessing and slipping coefficients.
 #' @param loglike_summed Log-likelihood over the iterations.
 #' @param loglike_pmean  Log-likelihood at the mean point
@@ -14,7 +15,8 @@
 #' @param n            Number of Observations
 #' @param timing       Number of Seconds that have elapsed since run time.
 #' @param dataset_name Name of the data set the estimation procedure ran on.
-#' @keywords internal
+#'
+#' @noRd
 new_edina = function(coefs, loglike_summed, loglike_pmean,
                      pis, avg_q, est_q, or_tested, sample_or, n, burnin,
                      chain_length,  timing, dataset_name) {
@@ -47,10 +49,12 @@ new_edina = function(coefs, loglike_summed, loglike_pmean,
 #' Construct a Summary EDINA object
 #'
 #' Constructor function to satisfy the Summary EDINA object definition
+#'
 #' @param edina      An `edina` object
 #' @param model_fit  Computed model heuristic value
 #' @param alpha      The region used in the computation of the heuristic.
-#' @keywords internal
+#'
+#' @noRd
 new_edina_summary = function(edina, model_fit, alpha) {
 
     edina[["model_fit"]] = model_fit
@@ -181,14 +185,19 @@ edina = function(data, k = 3, burnin = 10000, chain_length = 20000){
 #'                 dichotomous form or in an estimated form.
 #' @param ...      Additional methods passed onto the `print.matrix` method.
 #'
+#' @return
+#' None.
+#'
+#' The function provides a side-effect of displaying the overview of
+#' the model estimated.
+#'
 #' @export
 print.edina = function(x, binary = FALSE, ...){
-    cat("The EDINA model for", x$dataset_name, "with K =", x$k, "\n\n")
+    cat("EDINA model for", x$dataset_name, "with K =", x$k, "\n\n")
 
     est_mat = cbind(extract_q_matrix(x, binary = binary), x$coefficients)
 
     print(est_mat, digits = 4, ...)
-    invisible(est_mat)
 }
 
 #' Summarize the EDINA Object
@@ -199,6 +208,13 @@ print.edina = function(x, binary = FALSE, ...){
 #' @param alpha  Defining region to indicate the level of extremeness
 #'               the data must before the model is problematic.
 #' @param ...    Not used.
+#'
+#' @return
+#' A summary object that includes everything in the original [edina()] object
+#' and:
+#'
+#' - `model_fit`: Matrix of model fit summary statistics.
+#' - `alpha`: Alpha-value used to compute [PPP()]s.
 #'
 #' @export
 summary.edina = function(object, alpha = 0.05, ...) {
@@ -225,6 +241,12 @@ summary.edina = function(object, alpha = 0.05, ...) {
 #'                 dichotomous form or in an estimated form.
 #' @param ...      Past onto the `print.data.frame` method.
 #'
+#' @return
+#' None.
+#'
+#' The function provides a side-effect of displaying the overview of
+#' the model estimated.
+#'
 #' @export
 print.summary_edina = function(x, binary = FALSE,  ...) {
     # Rely upon the specification of the `edina` object in the summary class.
@@ -240,6 +262,4 @@ print.summary_edina = function(x, binary = FALSE,  ...) {
 
     cat("\nThe estimated Q matrix is:\n")
     print(extract_q_matrix(x, binary = binary), digits = 4)
-
-    invisible(x)
 }

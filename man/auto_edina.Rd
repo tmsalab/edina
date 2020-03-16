@@ -17,7 +17,13 @@ form with dimensions \eqn{N \times J}{N x J}.}
 \item{chain_length}{Length of the MCMC chain}
 }
 \value{
-An \code{auto_edina} object.
+An \code{auto_edina} object that contains:
+\itemize{
+\item \code{edina_models}: A list containing all estimated \code{edina} model objects.
+\item \code{criterions}: Information criterions calculated for each model
+\item \code{k_checked}: Varying \code{k} dimensions checked.
+\item \code{j}: Number of Items
+}
 }
 \description{
 Automatically select an appropriate \eqn{K} dimension for a \eqn{Q} matrix

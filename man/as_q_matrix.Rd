@@ -20,6 +20,9 @@ as_q_matrix(x, ...)
 
 \item{...}{Not used}
 }
+\value{
+A \code{q_matrix} object.`
+}
 \description{
 \code{as.q_matrix} acts as an aliases.
 }
@@ -29,4 +32,7 @@ x = matrix(c(1, 0, 0, 1), nrow = 2)
 
 # Construct class
 q_mat = as_q_matrix(x)
+}
+\seealso{
+\code{\link[=q_matrix]{q_matrix()}}
 }

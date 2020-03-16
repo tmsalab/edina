@@ -25,7 +25,7 @@
 #' set.seed(1512)
 #'
 #' # Setup data simulation parameters
-#' N = 15   # Number of Examinees / Subjects
+#' N = 2    # Number of Examinees / Subjects
 #' J = 10   # Number of Items
 #' K = 2    # Number of Skills / Attributes
 #'
@@ -46,7 +46,7 @@
 #' # Simulate items under the DINA model
 #' items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 #'
-#' \dontrun{
+#' \donttest{
 #' # Requires at least 15 seconds of execution time.
 #' # Three EDINA models will be fit with increasing number of attributes.
 #' model_set_edina = auto_edina(items_dina, k = 2:4)

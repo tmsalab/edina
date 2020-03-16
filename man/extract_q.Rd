@@ -24,13 +24,25 @@ extract_q_matrix(x, ...)
 dichotomous form or in an estimated form.}
 }
 \value{
-A \code{matrix} that is either dichotomous or estimated.
+A \code{matrix} that is either dichotomous or estimated depending on the value
+of the \code{binary} parameter.
 }
 \description{
 Given a modeling object, extract the Q Matrix
 }
+\examples{
+# Q matrix values
+x = matrix(c(1, 0, 0, 1), nrow = 2)
+
+# Show Q matrix structure
+Q = q_matrix(x)
+
+# Retrieve Q matrix
+extract_q_matrix(Q)
+}
 \seealso{
 \code{\link[=q_matrix]{q_matrix()}},
+\code{\link[=as_q_matrix]{as_q_matrix()}},
 \code{\link[=edina]{edina()}},
 \code{\link[=auto_edina]{auto_edina()}}
 }

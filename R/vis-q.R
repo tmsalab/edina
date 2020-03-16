@@ -6,6 +6,9 @@
 #' @param x   Either an `edina`, `auto_edina`, or `q_matrix` object.
 #' @param ... Additional parameters not used
 #'
+#' @return
+#' A `ggplot2` object with a heatmap overview of the estimated Q matrix.
+#'
 #' @export
 #' @rdname q_graph
 #' @examples

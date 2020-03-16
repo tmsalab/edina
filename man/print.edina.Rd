@@ -14,6 +14,12 @@ dichotomous form or in an estimated form.}
 
 \item{...}{Additional methods passed onto the \code{print.matrix} method.}
 }
+\value{
+None.
+
+The function provides a side-effect of displaying the overview of
+the model estimated.
+}
 \description{
 Custom print method for computing the EDINA.
 }
