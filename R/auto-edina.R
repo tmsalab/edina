@@ -147,7 +147,7 @@ print.auto_edina = function(x, ...) {
 #'
 #' @export
 summary.auto_edina = function(object, ...) {
-   class(object) = c('summary.auto_edina', class(object))
+   class(object) = c('summary_auto_edina', class(object))
    object
 }
 
@@ -155,7 +155,7 @@ summary.auto_edina = function(object, ...) {
 #'
 #' Custom method for displaying the results of the `summary(auto_edina)`.
 #'
-#' @param x   An `auto_edina` object
+#' @param x   A `summay_auto_edina` object
 #' @param ... Additional values passed onto the `print.data.frame` method.
 #'
 #' @return
@@ -165,7 +165,7 @@ summary.auto_edina = function(object, ...) {
 #' computed results across all models estimated.
 #'
 #' @export
-print.summary.auto_edina = function(x, ...) {
+print.summary_auto_edina = function(x, ...) {
     NextMethod()
 }
 
