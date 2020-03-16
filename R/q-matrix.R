@@ -6,6 +6,12 @@
 #'
 #' @param x A [`base::matrix()`] with dimensions \eqn{J \times K}{J x K}.
 #'
+#' @return
+#' A `matrix` with:
+#'
+#' - **Columns** named as `TraitXYZ` with XYZ denoting the trait number.
+#' - **Rows** named as `ItemXYZ` with XYZ denoting the item number.
+#'
 #' @noRd
 format_q_matrix = function(x) {
 
@@ -89,8 +95,14 @@ q_matrix = function(x) {
 #' @param x        Either a `data.frame` or `matrix`.
 #' @param ...      Not used
 #'
-#' @rdname as_q_matrix
+#' @return
+#' A `q_matrix` object.`
+#'
+#' @seealso [q_matrix()]
+#'
 #' @export
+#' @rdname as_q_matrix
+#'
 #' @examples
 #' # Q matrix values
 #' x = matrix(c(1, 0, 0, 1), nrow = 2)
@@ -128,9 +140,19 @@ as_q_matrix.default = function(x, ...) {
 #' @param ...      Additional methods passed onto the `print.matrix` method.
 #'
 #' @seealso
-#' [q_matrix()]
+#' [q_matrix()], [as_q_matrix()]
+#'
+#' @return
+#' An invisible `matrix` without the `q_matrix` class displayed as a part
+#' of the output displayed.
 #'
 #' @export
+#' @examples
+#' # Q matrix values
+#' x = matrix(c(1, 0, 0, 1), nrow = 2)
+#'
+#' # Show Q matrix structure
+#' q_matrix(x)
 print.q_matrix = function(x, ... ) {
 
     cat("Q Matrix properties\n")
@@ -163,15 +185,26 @@ print.q_matrix = function(x, ... ) {
 #' @param ...    Additional parameters
 #'
 #' @return
-#' A `matrix` that is either dichotomous or estimated.
+#' A `matrix` that is either dichotomous or estimated depending on the value
+#' of the `binary` parameter.
 #'
 #' @seealso
 #' [q_matrix()],
+#' [as_q_matrix()],
 #' [edina()],
 #' [auto_edina()]
 #'
 #' @rdname extract_q
 #' @export
+#' @examples
+#' # Q matrix values
+#' x = matrix(c(1, 0, 0, 1), nrow = 2)
+#'
+#' # Show Q matrix structure
+#' Q = q_matrix(x)
+#'
+#' # Retrieve Q matrix
+#' extract_q_matrix(Q)
 extract_q_matrix = function(x, ...) {
     UseMethod("extract_q_matrix")
 }

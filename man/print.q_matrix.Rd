@@ -11,9 +11,20 @@
 
 \item{...}{Additional methods passed onto the \code{print.matrix} method.}
 }
+\value{
+An invisible \code{matrix} without the \code{q_matrix} class displayed as a part
+of the output displayed.
+}
 \description{
 Custom print method for the Q Matrix Object.
 }
+\examples{
+# Q matrix values
+x = matrix(c(1, 0, 0, 1), nrow = 2)
+
+# Show Q matrix structure
+q_matrix(x)
+}
 \seealso{
-\code{\link[=q_matrix]{q_matrix()}}
+\code{\link[=q_matrix]{q_matrix()}}, \code{\link[=as_q_matrix]{as_q_matrix()}}
 }
