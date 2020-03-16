@@ -10,3 +10,7 @@
 ^LICENSE\.md$
 ^\.github$
 ^CRAN-RELEASE$
+^\.github/workflows/pkgdown\.yaml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
