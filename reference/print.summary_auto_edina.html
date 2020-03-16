@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bayesian Information Criterion (BIC) — BIC.edina • edina</title>
+<title>Print the <code>auto_edina</code> model summary — print.summary_auto_edina • edina</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Bayesian Information Criterion (BIC) — BIC.edina" />
-<meta property="og:description" content="Calculate BIC for EDINA models." />
+<meta property="og:title" content="Print the <code>auto_edina</code> model summary — print.summary_auto_edina" />
+<meta property="og:description" content="Custom method for displaying the results of the summary(auto_edina)." />
 
 
 
@@ -123,44 +123,36 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Bayesian Information Criterion (BIC)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tmsalab/edina/blob/master/R/model-selection.R'><code>R/model-selection.R</code></a></small>
-    <div class="hidden name"><code>BIC.edina.Rd</code></div>
+    <h1>Print the <code>auto_edina</code> model summary</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tmsalab/edina/blob/master/R/auto-edina.R'><code>R/auto-edina.R</code></a></small>
+    <div class="hidden name"><code>print.summary_auto_edina.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculate BIC for EDINA models.</p>
+    <p>Custom method for displaying the results of the <code><a href='https://rdrr.io/r/base/summary.html'>summary(auto_edina)</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for edina</span>
-<span class='fu'><a href='https://rdrr.io/r/stats/AIC.html'>BIC</a></span>(<span class='no'>object</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='co'># S3 method for summary_auto_edina</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>An <code>edina</code> object</p></td>
+      <th>x</th>
+      <td><p>A <code>summay_auto_edina</code> object</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Not used.</p></td>
+      <td><p>Additional values passed onto the <code>print.data.frame</code> method.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The BIC value of the given model.</p>
-    <h2 class="hasAnchor" id="bic-computation-procedure"><a class="anchor" href="#bic-computation-procedure"></a>BIC Computation Procedure</h2>
-
-    
-
-
-<p>\(BIC = -2 \log p\left( {\mathbf{y}| \mathbf{\hat{\theta}} } \right) + ((k+2)*j + 2^k)\log(n)\)</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='PPP.html'>PPP.edina()</a></code>, <code><a href='DIC.html'>DIC.edina()</a></code></p>
-<p><code><a href='PPP.html'>PPP.edina()</a></code>, <code><a href='DIC.html'>DIC.edina()</a></code></p></div>
+    <p>None.</p>
+<p>The function provides a side-effect of displaying the overview of
+computed results across all models estimated.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -168,8 +160,6 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#bic-computation-procedure">BIC Computation Procedure</a></li>
-      <li><a href="#see-also">See also</a></li>
     </ul>
 
   </div>

@@ -37,12 +37,6 @@
     <loc>https://tmsalab.github.io/edina/reference/model_selection_graph.html</loc>
   </url>
   <url>
-    <loc>https://tmsalab.github.io/edina/reference/new_edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/new_edina_summary.html</loc>
-  </url>
-  <url>
     <loc>https://tmsalab.github.io/edina/reference/parameter_evolution_graph.html</loc>
   </url>
   <url>
@@ -55,6 +49,9 @@
     <loc>https://tmsalab.github.io/edina/reference/print.q_matrix.html</loc>
   </url>
   <url>
+    <loc>https://tmsalab.github.io/edina/reference/print.summary_auto_edina.html</loc>
+  </url>
+  <url>
     <loc>https://tmsalab.github.io/edina/reference/print.summary_edina.html</loc>
   </url>
   <url>
@@ -62,6 +59,9 @@
   </url>
   <url>
     <loc>https://tmsalab.github.io/edina/reference/q_matrix.html</loc>
+  </url>
+  <url>
+    <loc>https://tmsalab.github.io/edina/reference/reexports.html</loc>
   </url>
   <url>
     <loc>https://tmsalab.github.io/edina/reference/summary.auto_edina.html</loc>

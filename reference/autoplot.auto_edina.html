@@ -135,7 +135,7 @@ on a graph</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for auto_edina</span>
-<span class='fu'>autoplot</span>(
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span>(
   <span class='no'>object</span>,
   <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"selection"</span>, <span class='st'>"guessing"</span>, <span class='st'>"slipping"</span>, <span class='st'>"evolution"</span>),
   <span class='no'>...</span>
@@ -175,7 +175,7 @@ on a graph</p>
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1512</span>)
 
 <span class='co'># Setup data simulation parameters</span>
-<span class='no'>N</span> <span class='kw'>=</span> <span class='fl'>15</span>   <span class='co'># Number of Examinees / Subjects</span>
+<span class='no'>N</span> <span class='kw'>=</span> <span class='fl'>2</span>    <span class='co'># Number of Examinees / Subjects</span>
 <span class='no'>J</span> <span class='kw'>=</span> <span class='fl'>10</span>   <span class='co'># Number of Items</span>
 <span class='no'>K</span> <span class='kw'>=</span> <span class='fl'>2</span>    <span class='co'># Number of Skills / Attributes</span>
 
@@ -196,24 +196,24 @@ on a graph</p>
 <span class='co'># Simulate items under the DINA model</span>
 <span class='no'>items_dina</span> <span class='kw'>=</span> <span class='kw pkg'>simcdm</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/simcdm/man/sim_dina_items.html'>sim_dina_items</a></span>(<span class='no'>subject_alphas</span>, <span class='no'>Q</span>, <span class='no'>ss</span>, <span class='no'>gs</span>)
 
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'># \donttest{</span>
 <span class='co'># Requires at least 15 seconds of execution time.</span>
 <span class='co'># Three EDINA models will be fit with increasing number of attributes.</span>
 <span class='no'>model_set_edina</span> <span class='kw'>=</span> <span class='fu'><a href='auto_edina.html'>auto_edina</a></span>(<span class='no'>items_dina</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>2</span>:<span class='fl'>4</span>)
 
 <span class='co'># Visualize results results</span>
-<span class='fu'>autoplot</span>(<span class='no'>model_set_edina</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"selection"</span>)
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span>(<span class='no'>model_set_edina</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"selection"</span>)
 
 <span class='co'># Equivalent to:</span>
 <span class='fu'><a href='model_selection_graph.html'>model_selection_graph</a></span>(<span class='no'>model_set_edina</span>)
 
 <span class='co'># View model parameters</span>
-<span class='fu'>autoplot</span>(<span class='no'>model_set_edina</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"guessing"</span>)
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span>(<span class='no'>model_set_edina</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"guessing"</span>)
 
 <span class='co'># Or directly call with:</span>
 <span class='fu'><a href='parameter_evolution_graph.html'>parameter_evolution_graph</a></span>(<span class='no'>model_set_edina</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"guessing"</span>)
-}
-}</div></pre>
+<span class='co'># }</span>
+}</div><div class='output co'>#&gt; <span class='message'>Starting the estimation procedure ... </span></div><div class='output co'>#&gt; <span class='message'>Working on k = 2 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 1.745</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 3 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 2.198</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 4 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 2.843</span></div><div class='img'><img src='autoplot.auto_edina-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compute the Deviance Information Criterion (DIC) — DIC • edina</title>
+<title>Deviance Information Criterion (DIC) — DIC • edina</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Compute the Deviance Information Criterion (DIC) — DIC" />
+<meta property="og:title" content="Deviance Information Criterion (DIC) — DIC" />
 <meta property="og:description" content="Calculate DIC for EDINA models." />
 
 
@@ -123,7 +123,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Compute the Deviance Information Criterion (DIC)</h1>
+    <h1>Deviance Information Criterion (DIC)</h1>
     <small class="dont-index">Source: <a href='https://github.com/tmsalab/edina/blob/master/R/model-selection.R'><code>R/model-selection.R</code></a></small>
     <div class="hidden name"><code>DIC.Rd</code></div>
     </div>
@@ -150,12 +150,27 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The DIC value of the given model.</p>
+    <h2 class="hasAnchor" id="dic-computation-procedure"><a class="anchor" href="#dic-computation-procedure"></a>DIC Computation Procedure</h2>
+
+    
+
+
+<p>\(DIC = -2\left({\log p\left( {\mathbf{y}| \mathbf{\hat{\theta}} } \right)  - 2\left( {\log p\left( {\mathbf{y}| \mathbf{\hat{\theta}} } \right) - \frac{1}{N}\sum\limits_{n = 1}^N {\log p\left( {\mathbf{y}|{\mathbf{\theta} _s}} \right)} } \right)} \right)\)</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='PPP.html'>PPP.edina()</a></code>, <code><a href='BIC.edina.html'>BIC.edina()</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#dic-computation-procedure">DIC Computation Procedure</a></li>
+      <li><a href="#see-also">See also</a></li>
     </ul>
 
   </div>

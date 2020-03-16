@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Model Heuristic used for Model Selection — PPP • edina</title>
+<title>Posterior Predictive Probabilities (PPPs) — PPP • edina</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="Model Heuristic used for Model Selection — PPP" />
-<meta property="og:description" content="Computes the model heuristic for model selection." />
+<meta property="og:title" content="Posterior Predictive Probabilities (PPPs) — PPP" />
+<meta property="og:description" content="Computes posterior predictive probabilities (PPPs) based on the
+odds ratios for each pair of items." />
 
 
 
@@ -123,16 +124,20 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Model Heuristic used for Model Selection</h1>
+    <h1>Posterior Predictive Probabilities (PPPs)</h1>
     <small class="dont-index">Source: <a href='https://github.com/tmsalab/edina/blob/master/R/model-selection.R'><code>R/model-selection.R</code></a></small>
     <div class="hidden name"><code>PPP.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Computes the model heuristic for model selection.</p>
+    <p>Computes posterior predictive probabilities (PPPs) based on the
+odds ratios for each pair of items.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>PPP</span>(<span class='no'>object</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>PPP</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for edina</span>
+<span class='fu'>PPP</span>(<span class='no'>object</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,11 +150,36 @@
       <th>...</th>
       <td><p>Not used.</p></td>
     </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>Defining region to indicate the level of extremeness
+the data must before the model is problematic.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>double</code> that is the mean.</p>
+    <p>The PPP value given the specified <code>alpha</code> value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>PPPs that smaller than 0.05 or greater than 0.95 tend to be extreme and
+evidence of misfit. As a result, this is more of a heuristic metric.</p>
+    <h2 class="hasAnchor" id="ppp-computation-procedure"><a class="anchor" href="#ppp-computation-procedure"></a>PPP Computation Procedure</h2>
+
+    
+
+<ol>
+<li><p>simulate observed responses \(\mathbf Y^{(r)}\) using model parameters
+from iteration \(r\) of the MCMC sampler</p></li>
+<li><p>computing the odds ratio for each pair of items at iteration \(r\) as
+$$OR^{(r)} = n_{11}^{(r)}n_{00}^{(r)}/\left(n_{10}^{(r)}n_{01}^{(r)}\right)$$,
+where \(n_{11}^{(r)}\) is the frequency of ones on both variables at
+iteration \(r\), \(n_{10}^{(r)}\) is the frequency of ones on the
+first item and zeros on the second at iteration \(r\), etc.; and</p></li>
+<li><p>computing PPPs for each item pair as the proportion of generated
+\(OR^{(r)}\)'s that exceeded elements of the observed odds ratios.</p></li>
+</ol>
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -157,6 +187,8 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#ppp-computation-procedure">PPP Computation Procedure</a></li>
     </ul>
 
   </div>

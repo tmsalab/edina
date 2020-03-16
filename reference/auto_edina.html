@@ -160,7 +160,13 @@ form with dimensions \(N \times J\).</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An <code>auto_edina</code> object.</p>
+    <p>An <code>auto_edina</code> object that contains:</p><ul>
+<li><p><code>edina_models</code>: A list containing all estimated <code>edina</code> model objects.</p></li>
+<li><p><code>criterions</code>: Information criterions calculated for each model</p></li>
+<li><p><code>k_checked</code>: Varying <code>k</code> dimensions checked.</p></li>
+<li><p><code>j</code>: Number of Items</p></li>
+</ul>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='autoplot.auto_edina.html'>autoplot.auto_edina()</a></code>,
@@ -210,11 +216,7 @@ form with dimensions \(N \times J\).</p></td>
 <span class='co'># Extract "best model"</span>
 <span class='fu'><a href='best_model.html'>best_model</a></span>(<span class='no'>model_set_edina</span>)
 <span class='co'># }</span>
-}</div><div class='output co'>#&gt; <span class='message'>Starting the estimation procedure ... </span></div><div class='output co'>#&gt; <span class='message'>Working on k = 2 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 2.667</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 3 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 3.785</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 4 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 5.991</span></div><div class='output co'>#&gt; The results of searching Q-matrices between 2 and 4 ...
-#&gt;  k   bic   dic     ppp
-#&gt;  2 318.8 175.2 0.02222
-#&gt;  3 382.5 156.8 0.02222
-#&gt;  4 448.6 148.7 0.02222</div><div class='output co'>#&gt; The EDINA model for data with K = 2 
+}</div><div class='output co'>#&gt; <span class='message'>Starting the estimation procedure ... </span></div><div class='output co'>#&gt; <span class='message'>Working on k = 2 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 2.579</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 3 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 3.442</span></div><div class='output co'>#&gt; <span class='message'>Working on k = 4 ... </span></div><div class='output co'>#&gt; <span class='message'>Time Elapsed: 4.873</span></div><div class='output co'>#&gt; The EDINA model for data with K = 2 
 #&gt; 
 #&gt; The model fit is as follows:
 #&gt;  k      bic      dic  heuristic
