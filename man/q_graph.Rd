@@ -29,6 +29,9 @@ Default: \code{TRUE}.}
 
 \item{ic}{Selection criteria}
 }
+\value{
+A \code{ggplot2} object with a heatmap overview of the estimated Q matrix.
+}
 \description{
 Provides a heatmap approach to showing the estimated binary or averaged
 values of the Q Matrix.
