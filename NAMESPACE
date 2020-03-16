@@ -2,6 +2,7 @@
 
 S3method(BIC,edina)
 S3method(DIC,edina)
+S3method(PPP,edina)
 S3method(as_q_matrix,data.frame)
 S3method(as_q_matrix,default)
 S3method(as_q_matrix,matrix)

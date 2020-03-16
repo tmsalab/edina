@@ -2,7 +2,7 @@
 % Please edit documentation in R/model-selection.R
 \name{BIC.edina}
 \alias{BIC.edina}
-\title{Calculate BIC for EDINA models.}
+\title{Bayesian Information Criterion (BIC)}
 \usage{
 \method{BIC}{edina}(object, ...)
 }
@@ -11,6 +11,20 @@
 
 \item{...}{Not used.}
 }
+\value{
+The BIC value of the given model.
+}
 \description{
 Calculate BIC for EDINA models.
+}
+\section{BIC Computation Procedure}{
+
+
+\eqn{BIC = -2 \log p\left( {\mathbf{y}| \mathbf{\hat{\theta}} } \right) + ((k+2)*j + 2^k)\log(n)}
+}
+
+\seealso{
+\code{\link[=PPP.edina]{PPP.edina()}}, \code{\link[=DIC.edina]{DIC.edina()}}
+
+\code{\link[=PPP.edina]{PPP.edina()}}, \code{\link[=DIC.edina]{DIC.edina()}}
 }

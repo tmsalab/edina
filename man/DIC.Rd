@@ -3,7 +3,7 @@
 \name{DIC}
 \alias{DIC}
 \alias{DIC.edina}
-\title{Compute the Deviance Information Criterion (DIC)}
+\title{Deviance Information Criterion (DIC)}
 \usage{
 DIC(object, ...)
 
@@ -14,6 +14,18 @@ DIC(object, ...)
 
 \item{...}{Not used.}
 }
+\value{
+The DIC value of the given model.
+}
 \description{
 Calculate DIC for EDINA models.
+}
+\section{DIC Computation Procedure}{
+
+
+\eqn{DIC = -2\left({\log p\left( {\mathbf{y}| \mathbf{\hat{\theta}} } \right)  - 2\left( {\log p\left( {\mathbf{y}| \mathbf{\hat{\theta}} } \right) - \frac{1}{N}\sum\limits_{n = 1}^N {\log p\left( {\mathbf{y}|{\mathbf{\theta} _s}} \right)} } \right)} \right)}
+}
+
+\seealso{
+\code{\link[=PPP.edina]{PPP.edina()}}, \code{\link[=BIC.edina]{BIC.edina()}}
 }

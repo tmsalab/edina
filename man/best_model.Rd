@@ -14,11 +14,17 @@ best_model(x, ...)
 
 \item{...}{Not used.}
 
-\item{ic}{Selection criteria}
+\item{ic}{Information criterion name. Default \code{"ppp"}.}
 }
 \value{
-An \code{edina} object
+An \code{edina} model object corresponding to the smallest value of requested
+information criterion.
 }
 \description{
 Extracts the best model from the \verb{auto_*()} search procedure.
+}
+\seealso{
+\code{\link[=DIC.edina]{DIC.edina()}},
+\code{\link[=BIC.edina]{BIC.edina()}},
+\code{\link[=PPP.edina]{PPP.edina()}}
 }
