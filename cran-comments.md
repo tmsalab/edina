@@ -22,7 +22,4 @@
 
 - From the last submission:
 
-- We have made sure all examples are using `donttest` if they exceed the
-  5 second execution threshold.
-- Each function now also has a `Value` field that describes what is returned or
-  what side-effect occurs. 
+- 

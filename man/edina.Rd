@@ -47,7 +47,7 @@ if(requireNamespace("simcdm", quietly = TRUE)) {
 set.seed(1512)
 
 # Setup data simulation parameters
-N = 15   # Number of Examinees / Subjects
+N = 1    # Number of Examinees / Subjects
 J = 10   # Number of Items
 K = 2    # Number of Skills / Attributes
 
@@ -68,7 +68,6 @@ subject_alphas = simcdm::sim_subject_attributes(N, K)
 # Simulate items under the DINA model
 items_dina = simcdm::sim_dina_items(subject_alphas, Q, ss, gs)
 
-\donttest{
 # Compute the edina model
 edina_model = edina(items_dina, k = K)
 
@@ -77,7 +76,6 @@ edina_model
 
 # Provide a summary overview
 summary(edina_model)
-}
 }
 
 }
