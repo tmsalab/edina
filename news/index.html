@@ -17,6 +17,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
+
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
@@ -63,7 +67,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -104,7 +108,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/tmsalab/edina">
+  <a href="https://github.com/tmsalab/edina/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -122,12 +126,12 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
+      <h1 data-toc-skip>Changelog <small></small></h1>
       <small>Source: <a href='https://github.com/tmsalab/edina/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
     <div id="edina-010" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.1.0">
 <a href="#edina-010" class="anchor"></a>edina 0.1.0</h1>
 <div id="features" class="section level2">
 <h2 class="hasAnchor">
@@ -141,12 +145,9 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#edina-010">0.1.0</a></li>
-      </ul>
-    </div>
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 
 </div>

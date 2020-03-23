@@ -1,8 +1,8 @@
 pandoc: 2.7.3
 pkgdown: 1.4.1.9000
-pkgdown_sha: 9d04de4c67c741a87a28665846451705eea6265b
+pkgdown_sha: 4cb1ae85bb7deeb8810153d55e355f872260995c
 articles: []
-last_built: 2020-03-16T23:14Z
+last_built: 2020-03-23T00:28Z
 urls:
   reference: https://tmsalab.github.io/edina/reference
   article: https://tmsalab.github.io/edina/articles

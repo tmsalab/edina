@@ -17,6 +17,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
+
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
@@ -65,7 +69,7 @@ estimation on a given data set with a prespecified k value." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -106,7 +110,7 @@ estimation on a given data set with a prespecified k value." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/tmsalab/edina">
+  <a href="https://github.com/tmsalab/edina/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -191,7 +195,7 @@ form with dimensions \(N \times J\).</p></td>
 <span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1512</span>)
 
 <span class='co'># Setup data simulation parameters</span>
-<span class='no'>N</span> <span class='kw'>=</span> <span class='fl'>15</span>   <span class='co'># Number of Examinees / Subjects</span>
+<span class='no'>N</span> <span class='kw'>=</span> <span class='fl'>1</span>    <span class='co'># Number of Examinees / Subjects</span>
 <span class='no'>J</span> <span class='kw'>=</span> <span class='fl'>10</span>   <span class='co'># Number of Items</span>
 <span class='no'>K</span> <span class='kw'>=</span> <span class='fl'>2</span>    <span class='co'># Number of Skills / Attributes</span>
 
@@ -212,7 +216,6 @@ form with dimensions \(N \times J\).</p></td>
 <span class='co'># Simulate items under the DINA model</span>
 <span class='no'>items_dina</span> <span class='kw'>=</span> <span class='kw pkg'>simcdm</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/simcdm/man/sim_dina_items.html'>sim_dina_items</a></span>(<span class='no'>subject_alphas</span>, <span class='no'>Q</span>, <span class='no'>ss</span>, <span class='no'>gs</span>)
 
-<span class='co'># \donttest{</span>
 <span class='co'># Compute the edina model</span>
 <span class='no'>edina_model</span> <span class='kw'>=</span> <span class='fu'>edina</span>(<span class='no'>items_dina</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='no'>K</span>)
 
@@ -221,49 +224,43 @@ form with dimensions \(N \times J\).</p></td>
 
 <span class='co'># Provide a summary overview</span>
 <span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>edina_model</span>)
-<span class='co'># }</span>
 }</div><div class='output co'>#&gt; The EDINA model for items_dina with K = 2 
 #&gt; 
 #&gt; The model fit is as follows:
-#&gt;  k      bic      dic  heuristic
-#&gt;  2 318.8249 175.2029 0.02222222
+#&gt;  k      bic      dic heuristic
+#&gt;  2 11.21918 11.91657         1
 #&gt; 
 #&gt; The estimated coefficients for the EDINA model are:
 #&gt;        Guessing SD(Guessing) Slipping SD(Slipping)
-#&gt; Item1    0.3959       0.1772   0.2386       0.1447
-#&gt; Item2    0.2637       0.1467   0.4050       0.1821
-#&gt; Item3    0.1220       0.1070   0.3213       0.1670
-#&gt; Item4    0.1414       0.1186   0.1433       0.1234
-#&gt; Item5    0.3301       0.1516   0.2359       0.1393
-#&gt; Item6    0.2192       0.1304   0.3106       0.1648
-#&gt; Item7    0.2278       0.1109   0.4920       0.2021
-#&gt; Item8    0.2920       0.1590   0.3375       0.1729
-#&gt; Item9    0.4198       0.1449   0.3401       0.1458
-#&gt; Item10   0.2272       0.1398   0.2441       0.1438
+#&gt; Item1    0.4410       0.2420   0.2463       0.1907
+#&gt; Item2    0.2484       0.1933   0.4155       0.2448
+#&gt; Item3    0.2499       0.1935   0.4148       0.2448
+#&gt; Item4    0.4388       0.2432   0.2495       0.1939
+#&gt; Item5    0.4365       0.2423   0.2493       0.1931
+#&gt; Item6    0.4391       0.2421   0.2506       0.1935
+#&gt; Item7    0.2481       0.1923   0.4142       0.2448
+#&gt; Item8    0.2519       0.1942   0.4141       0.2447
+#&gt; Item9    0.2442       0.1908   0.4183       0.2460
+#&gt; Item10   0.4367       0.2429   0.2501       0.1945
 #&gt; 
 #&gt; The estimated Q matrix is:
 #&gt;        Trait1 Trait2
-#&gt; Item01 0.6418 0.5205
-#&gt; Item02 0.6194 0.5121
-#&gt; Item03 0.5409 0.6620
-#&gt; Item04 0.4881 0.6256
-#&gt; Item05 0.5454 0.6601
-#&gt; Item06 0.5941 0.6817
-#&gt; Item07 0.7514 0.7612
-#&gt; Item08 0.6271 0.5074
-#&gt; Item09 0.6640 0.6284
-#&gt; Item10 0.5025 0.6315</div><div class='input'>
+#&gt; Item01 0.6181 0.6344
+#&gt; Item02 0.6805 0.6600
+#&gt; Item03 0.6694 0.6759
+#&gt; Item04 0.6330 0.6232
+#&gt; Item05 0.6220 0.6274
+#&gt; Item06 0.6250 0.6306
+#&gt; Item07 0.6673 0.6696
+#&gt; Item08 0.6647 0.6809
+#&gt; Item09 0.6730 0.6667
+#&gt; Item10 0.6333 0.6208</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
