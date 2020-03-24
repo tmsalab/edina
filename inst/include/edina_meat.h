@@ -24,7 +24,7 @@ inline arma::vec bijectionvector(unsigned int K)
     arma::vec vv(K);
 
     for (unsigned int k = 0; k < K; ++k) {
-        vv(k) = pow(2, K - k - 1);
+        vv(k) = std::pow(2.0, static_cast<double>(K - k) - 1.0);
     }
 
     return vv;
@@ -35,7 +35,7 @@ inline arma::vec inv_bijectionvector(unsigned int K, double CL)
     arma::vec alpha(K);
 
     for (unsigned int k = 0; k < K; ++k) {
-        double twopow = pow(2, K - k - 1);
+        double twopow = std::pow(2.0, static_cast<double>(K - k) - 1.0);
         alpha(k) = (twopow <= CL);
         CL = CL - twopow * alpha(k);
     }
@@ -138,7 +138,9 @@ inline arma::mat alpha_matrix(const arma::mat& Q) {
 
     int K = Q.n_cols;
 
-    double nClass = pow(2, K);
+    unsigned int nClass =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K)));
+
     arma::mat alpha_mat(nClass, K);
 
     for(unsigned int cc = 0; cc < nClass; cc++){
@@ -151,7 +153,8 @@ inline arma::mat alpha_matrix(const arma::mat& Q) {
 
 inline arma::mat ETAmat(unsigned int K, unsigned int J, const arma::mat &Q)
 {
-    double nClass = pow(2, K);
+    unsigned int nClass =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K)));
 
     arma::mat ETA(J, nClass);
 
@@ -171,8 +174,12 @@ inline arma::mat ETAmat(unsigned int K, unsigned int J, const arma::mat &Q)
 
 inline arma::cube ETAmat_nok(unsigned int K)
 {
-    unsigned int nClass = pow(2, K);
-    unsigned int nqjs = pow(2, K - 1);
+    unsigned int nClass =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K)));
+
+    unsigned int nqjs =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K) - 1.0));
+
     arma::vec zero_to_Km1 = arma::linspace(0, K - 1, K);
     arma::cube ETA_nok(K, nqjs, nClass);
     for (unsigned int k = 0; k < K; ++k) {
@@ -194,8 +201,12 @@ inline arma::cube ETAmat_nok(unsigned int K)
 
 inline arma::cube ETAmat_nok_one_m_ac(unsigned int K)
 {
-    unsigned int nClass = pow(2, K);
-    unsigned int nqjs = pow(2, K - 1);
+    unsigned int nClass =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K)));
+
+    unsigned int nqjs =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K) - 1.0));
+
     arma::vec zero_to_Km1 = arma::linspace(0, K - 1, K);
     arma::cube ETA_nok(K, nqjs, nClass);
     for (unsigned int k = 0; k < K; ++k) {
@@ -255,7 +266,9 @@ inline arma::vec abcounts(unsigned int N, const arma::vec &Yj, const arma::vec &
 
 inline arma::mat ClassbyQmat(unsigned int K)
 {
-    double nClass = pow(2, K);
+    unsigned int nClass =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K)));
+
     arma::mat ETAbyQ(nClass, nClass - 1);
     for (unsigned int cc = 0; cc < nClass; ++cc) {
         arma::vec alpha_c = inv_bijectionvector(K, cc);
@@ -617,7 +630,8 @@ inline Rcpp::List edina_Gibbs_Q(const arma::mat &Y, unsigned int K,
     // unsigned int K = Q.n_cols;
 
     // Number of Classes
-    unsigned int nClass = pow(2, K);
+    unsigned int nClass =
+        static_cast<unsigned int>(std::pow(2.0, static_cast<double>(K)));
 
     // Total Chain length with burn
     // Prevents overflow

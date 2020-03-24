@@ -1,3 +1,9 @@
+# edina 0.1.1
+
+## Bug Fix
+
+- Fix ambiguous overloaded of `pow` on Solaris.
+
 # edina 0.1.0
 
 ## Features
