@@ -1,3 +1,13 @@
+# edina 0.1.1
+
+## Bug Fix
+
+- Fix ambiguous overloaded of `pow` on Solaris.
+
+## Documentation
+
+- Added CRAN badges to README.
+
 # edina 0.1.0
 
 ## Features
