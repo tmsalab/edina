@@ -22,19 +22,16 @@ Description: Perform a Bayesian estimation of the exploratory
 URL: https://github.com/tmsalab/edina
 BugReports: https://github.com/tmsalab/edina/issues
 License: GPL (>= 2)
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.3.0)
 Imports: 
-    Rcpp,
+    Rcpp (>= 1.1.0),
     ggplot2, 
     jjb,
     reshape2
-LinkingTo: 
-    Rcpp,
-    RcppArmadillo,
-    rgen
+LinkingTo: Rcpp, RcppArmadillo (>= 15.0.2-2), rgen
 Suggests: simcdm
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 Language: en-US
