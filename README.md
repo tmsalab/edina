@@ -1,21 +1,12 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
 # edina
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/tmsalab/edina/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/edina/actions)
-[![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![CRAN Version
-Badge](http://www.r-pkg.org/badges/version/edina)](https://cran.r-project.org/package=edina)
-[![CRAN
-Status](https://cranchecks.info/badges/worst/edina)](https://cran.r-project.org/web/checks/check_results_edina.html)
-[![RStudio CRAN Mirror’s Monthly
-Downloads](http://cranlogs.r-pkg.org/badges/edina?color=brightgreen)](http://www.r-pkg.org/pkg/edina)
-[![RStudio CRAN Mirror’s Total
-Downloads](http://cranlogs.r-pkg.org/badges/grand-total/edina?color=brightgreen)](http://www.r-pkg.org/pkg/edina)
+[![R-CMD-check](https://github.com/tmsalab/edina/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tmsalab/edina/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Perform a Bayesian estimation of the Exploratory Deterministic Input,
@@ -33,8 +24,8 @@ install.packages("edina")
 Or, you can be on the cutting-edge development version on GitHub using:
 
 ``` r
-if(!requireNamespace("devtools")) install.packages("devtools")
-devtools::install_github("tmsalab/edina")
+if(!requireNamespace("remotes")) install.packages("remotes")
+remotes::install_github("tmsalab/edina")
 ```
 
 ## Usage
