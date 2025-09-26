@@ -3,18 +3,15 @@
 \docType{package}
 \name{edina-package}
 \alias{edina-package}
-\alias{_PACKAGE}
 \title{edina: Bayesian Estimation of an Exploratory Deterministic Input, Noisy and Gate Model}
 \description{
-Perform a Bayesian estimation of the exploratory 
-    deterministic input, noisy and gate (EDINA)
-    cognitive diagnostic model described by Chen et al. (2018)
-    <doi:10.1007/s11336-017-9579-4>.
+Perform a Bayesian estimation of the exploratory deterministic input, noisy and gate (EDINA) cognitive diagnostic model described by Chen et al. (2018) \doi{10.1007/s11336-017-9579-4}.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/tmsalab/edina}
+  \item \url{https://tmsalab.github.io/edina/}
   \item Report bugs at \url{https://github.com/tmsalab/edina/issues}
 }
 
