@@ -1,3 +1,16 @@
+# edina 0.1.2
+
+## Changes
+
+- Added a pkgdown website for the R package.
+- Added explicit dependencies on R (>= 4.3.0), Rcpp (>= 1.1.0), and RcppArmadillo (>= 15.0.2-2)
+- Removed CXX11 from `src/Makevars` and `src/Makevars.win` to avoid potential compilation issues
+  with newer versions of Armadillo through RcppArmadillo.
+- Switched README.Rmd to README.qmd to use Quarto for rendering.
+- Fixed CITATION file to use `c()` instead of `personList()` and `bibentry()` to
+  avoid CRAN check notes.
+- Updated GitHub Action workflows.
+
 # edina 0.1.1
 
 ## Bug Fix
