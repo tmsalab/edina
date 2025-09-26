@@ -7,6 +7,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // edina_Gibbs_Q
 Rcpp::List edina_Gibbs_Q(const arma::mat& Y, unsigned int K, unsigned int burnin, unsigned int chain_length);
 RcppExport SEXP _edina_edina_Gibbs_Q(SEXP YSEXP, SEXP KSEXP, SEXP burninSEXP, SEXP chain_lengthSEXP) {
