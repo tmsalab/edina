@@ -1,15 +1,12 @@
 ## Test environments
 
-- local R installation, R 3.6.3
-- ubuntu 16.04 (on GitHub Actions), R 3.6.3
+- local R installation, R 4.5.1
+- ubuntu 24.04 (on GitHub Actions), R 4.5.1
 - win-builder (devel)
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 note
 
-> Days since last update: 0
-
-- This release addresses an issue uncovered with `pow()` on Solaris causing 
-  the package to fail to build.
-  https://www.r-project.org/nosvn/R.check/r-patched-solaris-x86/edina-00install.html
+We are making this release to account for the RcppArmadillo change that
+requires removing `CXX_STD=CXX11`.
