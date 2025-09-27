@@ -1,72 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tmsalab.github.io/edina/index.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/BIC.edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/DIC.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/PPP.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/as_q_matrix.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/auto_edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/autoplot.auto_edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/best_model.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/edina-package.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/extract_q.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/model_selection_graph.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/parameter_evolution_graph.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/print.auto_edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/print.edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/print.q_matrix.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/print.summary_auto_edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/print.summary_edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/q_graph.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/q_matrix.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/summary.auto_edina.html</loc>
-  </url>
-  <url>
-    <loc>https://tmsalab.github.io/edina/reference/summary.edina.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://tmsalab.github.io/edina/404.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/LICENSE.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/authors.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/index.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/news/index.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/BIC.edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/DIC.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/PPP.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/as_q_matrix.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/auto_edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/autoplot.auto_edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/best_model.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/edina-package.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/extract_q.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/index.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/model_selection_graph.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/parameter_evolution_graph.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/print.auto_edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/print.edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/print.q_matrix.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/print.summary_auto_edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/print.summary_edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/q_graph.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/q_matrix.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/reexports.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/summary.auto_edina.html</loc></url>
+<url><loc>https://tmsalab.github.io/edina/reference/summary.edina.html</loc></url>
 </urlset>
+
