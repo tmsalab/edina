@@ -19,15 +19,6 @@ navbar:
     - text: "Change log"
       href: news/index.html
 
-reference:
-- title: Estimation
-  desc: >
-   Perform a Bayesian estimation of the Exploratory
-   Deterministic Input, Noisy "And" Gate (EDINA)
-   cognitive diagnostic model described by Chen et al. (2018).
-  contents:
-  - edina
-
 template:
   params:
     ganalytics: UA-151562227-1
