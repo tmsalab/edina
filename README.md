@@ -2,7 +2,7 @@
 
 <!-- README.md is generated from README.qmd. Please edit that file -->
 
-# edina
+# edina <a href="https://tmsalab.github.io/edina/"><picture><source media="(prefers-color-scheme: dark)" srcset="man/figures/edina-logo-animated-dark.svg"><img src="man/figures/edina-logo-animated-light.svg" width="150" align="right" alt="A hexagonal logo for edina: a solid punch card with the word edina cut out of it, punched with a three-attribute Q-matrix of square holes, where the three entries the sampler is still deciding hang as orange chads by one corner."/></picture></a>
 
 <!-- badges: start -->
 

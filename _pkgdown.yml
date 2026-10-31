@@ -22,3 +22,7 @@ navbar:
 template:
   params:
     ganalytics: UA-151562227-1
+  opengraph:
+    image:
+      src: man/figures/edina-logo-static-light.svg
+      alt: The edina hex logo, a punch card of the learned Q-matrix with orange hanging chads for the entries still being decided.
